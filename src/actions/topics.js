@@ -43,7 +43,10 @@ export const createTopic = (topic) => {
       Accept:'application/json',
       "Authorization": token
     },
-    body: JSON.stringify({topic})
+    body: JSON.stringify({'topic': {
+      label: topic.name,
+      uri: topic.url
+    }})
   }
   return (dispatch) => {
     fetch('http://localhost:3000/topics', options)

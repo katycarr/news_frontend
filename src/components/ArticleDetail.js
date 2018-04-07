@@ -1,8 +1,9 @@
 import React from 'react'
+import TopicPlus from '../containers/TopicPlus'
 
 const ArticleDetail = ({article}) => {
   const articleTopics = article.topics.map(topic => {
-    return <span key={topic.id}>{topic.name} </span>
+    return <TopicPlus key={topic.id} topic={topic} />
   })
   return(
     <div>{articleTopics}</div>
