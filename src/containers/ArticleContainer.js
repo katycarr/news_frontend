@@ -1,18 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {fetchArticles} from '../actions/articles'
+import ArticleCard from '../components/ArticleCard'
 
 class ArticleContainer extends React.Component {
 
   componentDidMount = () => {
-    this.props.fetchArticles(this.props.user.id)
+    this.props.fetchArticles()
   }
 
   render() {
-    const articles = this.props.articles.map(article => {
-      return <li key={article.id}>{article.title}</li>
-    })
-    return(<div>{articles}</div>)
+    let articles;
+    if (this.props.articles.length > 0) {
+      articles = this.props.articles.map(article => {
+        return <ArticleCard key={article.id} article={article}/>
+      })
+    }
+    return(<div className='articles-container'>{articles ? articles : null}</div>)
   }
 }
 

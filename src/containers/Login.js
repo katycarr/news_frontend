@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../actions/user'
+import { withRouter } from 'react-router-dom'
 
 class Login extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.loginUser(this.state)
+    this.props.loginUser(this.state, this.props.history)
   }
 
   handleChange = e => {
@@ -20,6 +21,7 @@ class Login extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return(
       <form onSubmit={this.handleSubmit}>
         <input type='text' name='username' value={this.state.username} onChange={this.handleChange}/>
@@ -30,4 +32,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect(null, {loginUser})(Login)
+export default withRouter(connect(null, {loginUser})(Login))

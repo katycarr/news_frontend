@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createUser } from '../actions/user'
+import { withRouter } from 'react-router-dom'
 
 class Signup extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class Signup extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createUser(this.state)
+    this.props.createUser(this.state, this.props.history)
   }
 
   handleChange = e => {
@@ -32,4 +33,4 @@ class Signup extends React.Component {
   }
 }
 
-export default connect(null, {createUser})(Signup)
+export default withRouter(connect(null, {createUser})(Signup))

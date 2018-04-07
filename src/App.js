@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import ArticleContainer from './containers/ArticleContainer'
-import TopicsContainer from './containers/TopicsContainer'
 import Signup from './containers/Signup'
 import Login from './containers/Login'
 import { connect } from 'react-redux'
 
+import HomeContainer from './containers/HomeContainer'
+import {getUser} from './actions/user'
+import './stylesheets/App.css'
+import FindTopicsContainer from './containers/FindTopicsContainer'
+import {Route, withRouter} from 'react-router-dom'
+import {fetchTopics} from './actions/topics'
+
+
+
+
 class App extends Component {
+  
+
   render() {
+    console.log(this.props)
     return (
       <div className="App">
-        {this.props.user.id ?
-          <div>
-            <ArticleContainer />
-            <TopicsContainer />
-          </div>
-           :
-        <div>
-          <Signup />
-          <Login />
-        </div>
-        }
+        <Route exact path='/' render={() => <HomeContainer />} />
+        <Route path='/login' render={() => <Login />} />
+        <Route path='/signup' render={() => <Signup />} />
+        <Route path='/topics' render={() => <FindTopicsContainer />} />
       </div>
     );
   }
@@ -31,4 +35,5 @@ function mapStateToProps(state) {
     user: state.authentication.user
   }
 }
-export default connect(mapStateToProps)(App);
+
+export default withRouter(connect(mapStateToProps, {getUser, fetchTopics})(App));

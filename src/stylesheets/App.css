@@ -1,0 +1,16 @@
+div.topics-container {
+  width: 30%;
+  position:absolute;
+  border: 1px solid black;
+  height:100%;
+}
+
+div.articles-container {
+  border:1px solid black;
+  width: 70%;
+  margin-left: 30%;
+}
+
+div.article {
+  border-bottom: 1px solid black;
+}

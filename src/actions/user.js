@@ -1,6 +1,6 @@
 export const createUser = ({username, password, password_confirmation}) => {
 
-  return (dispatch) => {
+  return (dispatch, history) => {
     let options = {
       method: 'POST',
       headers: {
@@ -12,17 +12,21 @@ export const createUser = ({username, password, password_confirmation}) => {
     fetch('http://localhost:3000/users', options)
       .then(res => res.json())
       .then(json => {
-        if(json.id) {
+        if(json.errors) {
+          console.log(json.errors)
+        } else {
+          localStorage.setItem('token', json.token)
           dispatch({
             type: 'CREATE_USER',
-            payload: json
+            payload: json.user
           })
+          history.push('/')
         }
       })
   }
 }
 
-export const loginUser = ({username, password}) => {
+export const loginUser = ({username, password}, history) => {
   return (dispatch) => {
     let options = {
       method: 'POST',
@@ -35,13 +39,44 @@ export const loginUser = ({username, password}) => {
     fetch('http://localhost:3000/login', options)
       .then(res => res.json())
       .then(json => {
-        if(json.id) {
+        if(json.errors) {
+          console.log(json.errors)
+        } else {
+          localStorage.setItem('token', json.token)
           dispatch({
             type: 'CREATE_USER',
-            payload: json
+            payload: json.user
           })
+          history.push('/')
         }
       })
+  }
+}
 
+export const logout = () => {
+  return {
+    type: 'LOGOUT'
+  }
+}
+
+export const getUser = () => {
+  const token = localStorage.getItem('token')
+  return (dispatch) => {
+    fetch('http://localhost:3000/get_user', {
+      headers: {
+        "Authorization": token
+      }
+    })
+    .then(res => res.json())
+    .then(json => {
+      if (json["error"]) {
+        console.log(json)
+      } else {
+        dispatch({
+          type: 'GET_USER',
+          payload: json
+        })
+      }
+    })
   }
 }
