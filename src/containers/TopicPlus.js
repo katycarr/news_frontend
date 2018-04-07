@@ -9,9 +9,19 @@ class TopicPlus extends React.Component {
   }
   render() {
     return (
-      <li>{this.props.topic.name} <button onClick={this.handleClick}>+</button></li>
+      <li>{this.props.topic.name}
+        {this.props.userTopics.filter(t => t.id === this.props.topic.id).length >0 ? null :
+        <button onClick={this.handleClick}>+</button>
+        }
+      </li>
     )
   }
 }
 
-export default connect(null, {createTopic})(TopicPlus)
+function mapStateToProps(state) {
+  return {
+    userTopics: state.topics.all
+  }
+}
+
+export default connect(mapStateToProps, {createTopic})(TopicPlus)

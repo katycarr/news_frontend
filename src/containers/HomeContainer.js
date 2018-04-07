@@ -1,18 +1,15 @@
 import React from 'react'
-import { logout } from '../actions/user'
 import ArticleContainer from './ArticleContainer'
 import TopicsContainer from './TopicsContainer'
 import { connect } from 'react-redux'
 import withAuth from '../hocs/withAuth'
 import {fetchTopics} from '../actions/topics'
+import Nav from './Nav'
 
 
 class HomeContainer extends React.Component {
 
-  logout = () => {
-    localStorage.removeItem('token')
-    this.props.logout()
-  }
+
 
   componentDidMount = () => {
     this.props.fetchTopics()
@@ -21,11 +18,11 @@ class HomeContainer extends React.Component {
   render() {
     return(
       <div>
-          <div className='home-container'>
-            <TopicsContainer />
-            <ArticleContainer />
-          </div>
-        <button onClick={this.logout}>Logout</button>
+        <Nav />
+        <div className='home-container'>
+          <TopicsContainer />
+          <ArticleContainer />
+        </div>
       </div>
     )
   }
@@ -38,4 +35,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {logout, fetchTopics})(withAuth(HomeContainer))
+export default connect(mapStateToProps, {fetchTopics})(withAuth(HomeContainer))

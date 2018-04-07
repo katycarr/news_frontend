@@ -21,7 +21,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return(
       <form onSubmit={this.handleSubmit}>
         <input type='text' name='username' value={this.state.username} onChange={this.handleChange}/>

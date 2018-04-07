@@ -1,6 +1,7 @@
 const initialState = {
   all: [],
-  searchResults: []
+  searchResults: [],
+  popular: []
 }
 
 export function topics(state=initialState, action) {

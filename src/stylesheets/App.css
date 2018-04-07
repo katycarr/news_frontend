@@ -14,3 +14,11 @@ div.articles-container {
 div.article {
   border-bottom: 1px solid black;
 }
+
+div.nav {
+  text-align:right;
+}
+
+div.nav a, div.nav button {
+  padding:10px;
+}
