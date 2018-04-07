@@ -13,9 +13,10 @@ class ArticleCard extends React.Component {
   }
 
   render() {
+    console.log(this.props.article)
     return(
       <div className='article'>
-        <h3><a href={this.props.article.url}>{this.props.article.title}</a></h3>
+        <a href={this.props.article.url}><h3>{this.props.article.title}</h3></a>
         <h5>{this.props.article.author} - {this.props.article.source}</h5>
         <button onClick={this.handleClick}>Toggle Detail</button>
         <p>{this.props.article.description}</p>
