@@ -13,15 +13,18 @@ class ArticleCard extends React.Component {
   }
 
   render() {
-    console.log(this.props.article)
     const date = new Date(this.props.article.published_at)
     return(
       <div className='article'>
-        <a href={this.props.article.url}><h3>{this.props.article.title}</h3></a>
-        <h5>{this.props.article.author} - {this.props.article.source}</h5>
-        <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
-        <button onClick={this.handleClick}>Toggle Detail</button>
-        <p>{this.props.article.description}</p>
+        {this.props.article.img_url ?<img src={this.props.article.img_url} alt={this.props.article.title} className='article-img'/>
+        : null }
+        <div className='article-content'>
+          <a href={this.props.article.url}><h3>{this.props.article.title}</h3></a>
+          <h5>{this.props.article.author} - {this.props.article.source}</h5>
+          <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
+          <button onClick={this.handleClick}>Toggle Detail</button>
+          <p>{this.props.article.description}</p>
+        </div>
         {this.state.showDetail ? <ArticleDetail article={this.props.article} /> : null}
       </div>
     )

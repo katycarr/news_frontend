@@ -6,7 +6,7 @@ const ArticleDetail = ({article}) => {
     return <TopicPlus key={topic.id} topic={topic} />
   })
   return(
-    <div>{articleTopics}</div>
+    <div className='article-topics'>{articleTopics}</div>
   )
 }
 

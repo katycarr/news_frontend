@@ -1,8 +1,8 @@
 div.topics-container {
   width: 30%;
   position:absolute;
-  border: 1px solid black;
   height:100%;
+  background-color:lightblue;
 }
 
 div.articles-container {
@@ -12,7 +12,8 @@ div.articles-container {
 }
 
 div.article {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid lightgrey;
+  position:relative;
 }
 
 div.nav {
@@ -27,4 +28,35 @@ div.popular-topics {
   position:absolute;
   width:30%;
   left:70%;
+}
+
+img.article-img {
+  position:absolute;
+  left:0;
+  top:0;
+  max-width:200px;
+}
+
+div.article-content {
+  position:relative;
+  width:70%;
+  left:250px;
+  text-align:left;
+}
+
+div.article-topics {
+  list-style-type:none;
+}
+
+div.article-topics li {
+  display: inline-block;
+  margin:5px;
+  padding:5px;
+  background-color:rgba(0,0,0,0.2);
+}
+
+div.article-topics li button {
+  background:none;
+  color:white;
+  font-weight:bold;
 }
