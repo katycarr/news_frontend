@@ -22,3 +22,9 @@ div.nav {
 div.nav a, div.nav button {
   padding:10px;
 }
+
+div.popular-topics {
+  position:absolute;
+  width:30%;
+  left:70%;
+}

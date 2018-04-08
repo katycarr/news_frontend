@@ -15,7 +15,7 @@ class PopularTopics extends React.Component {
       return <TopicPlus key={topic.id} topic={topic} />
     })
     return (
-      <div>
+      <div className='popular-topics'>
         <h1>Popular Topics</h1>
         {topics}
       </div>
