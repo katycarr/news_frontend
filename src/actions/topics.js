@@ -81,3 +81,16 @@ export const deleteUserTopic = (topicId) => {
       })
   }
 }
+
+export const getPopularTopics = () => {
+  return (dispatch) => {
+    fetch('http://localhost:3000/topics?pop=true')
+      .then(res => res.json())
+      .then(json => {
+        dispatch({
+          type: 'POP_TOPICS',
+          payload: json
+        })
+      })
+  }
+}

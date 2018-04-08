@@ -14,6 +14,8 @@ export function topics(state=initialState, action) {
       return {...state, all: [...state.all.filter(topic => topic.id !== action.payload)]}
     case 'CREATE_USER_TOPIC':
       return {...state, all: [...state.all, action.payload]}
+    case 'POP_TOPICS':
+      return {...state, popular: action.payload}
     default:
       return state
   }

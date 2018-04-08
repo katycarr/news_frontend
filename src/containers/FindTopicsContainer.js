@@ -5,6 +5,7 @@ import SearchResultsList from '../components/SearchResultsList'
 import UserTopicsList from '../components/UserTopicsList'
 import withAuth from '../hocs/withAuth'
 import Nav from './Nav'
+import PopularTopics from './PopularTopics'
 
 class FindTopicsContainer extends React.Component {
   state = {
@@ -33,6 +34,7 @@ class FindTopicsContainer extends React.Component {
     return(
       <div>
         <Nav />
+        <PopularTopics />
         <UserTopicsList topics={this.props.topics} />
         <form onSubmit={this.handleSubmit}>
           <input type='text' name='input' value={this.state.input} onChange={this.handleChange} />
