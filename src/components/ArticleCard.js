@@ -22,6 +22,7 @@ class ArticleCard extends React.Component {
           <a href={this.props.article.url}><h3>{this.props.article.title}</h3></a>
           <h5>{this.props.article.author} - {this.props.article.source}</h5>
           <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
+          <p>{this.props.article.reading_time}</p>
           <button onClick={this.handleClick}>Toggle Detail</button>
           <p>{this.props.article.description}</p>
         </div>
