@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {fetchArticles} from '../actions/articles'
 import ArticleCard from '../components/ArticleCard'
+import '../stylesheets/Loader.css'
+
 
 class ArticleContainer extends React.Component {
 
@@ -15,8 +17,10 @@ class ArticleContainer extends React.Component {
       articles = this.props.articles.map(article => {
         return <ArticleCard key={article.id} article={article}/>
       })
+      return(<div className='articles-container'>{articles ? articles : null}</div>)
+    } else {
+      return (<div className='articles-container'><div className="loader"></div></div>)
     }
-    return(<div className='articles-container'>{articles ? articles : null}</div>)
   }
 }
 
