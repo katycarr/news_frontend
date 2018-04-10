@@ -18,8 +18,8 @@ class HomeContainer extends React.Component {
   render() {
     return(
       <div>
-        <Nav />
         <div className='home-container'>
+          <Nav />
           <TopicsContainer />
           <ArticleContainer />
         </div>

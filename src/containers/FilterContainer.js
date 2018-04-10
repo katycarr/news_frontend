@@ -19,8 +19,9 @@ class FilterContainer extends React.Component {
       return <SourceCheckbox key={source} source={source} />
     })
     return(
-      <div>
-        <button onClick={this.toggleVisibility}>Show/hide</button>
+      <div className='source-filter'>
+        <p>Filter by source</p>
+        <a className='toggle-source' onClick={this.toggleVisibility}>{this.state.visible ? 'Hide List' : 'Show List'}</a>
           {this.state.visible ? options : null}
       </div>
     )

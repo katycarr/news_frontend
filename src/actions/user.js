@@ -1,6 +1,6 @@
-export const createUser = ({username, password, password_confirmation}) => {
+export const createUser = ({username, password, password_confirmation}, history) => {
 
-  return (dispatch, history) => {
+  return (dispatch) => {
     let options = {
       method: 'POST',
       headers: {

@@ -1,14 +1,14 @@
-div.topics-container {
-  width: 30%;
-  position:absolute;
-  height:100%;
-  background-color:lightblue;
+div.home-container {
+  display:grid;
+  grid-template-columns: 250px auto auto;
+  grid-template-rows: 50px auto;
 }
 
+
 div.articles-container {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
   border:1px solid black;
-  width: 70%;
-  margin-left: 30%;
 }
 
 div.article {
@@ -17,6 +17,8 @@ div.article {
 }
 
 div.nav {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
   text-align:right;
 }
 

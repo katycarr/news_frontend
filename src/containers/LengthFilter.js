@@ -10,7 +10,8 @@ class FilterContainer extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='length-filter'>
+        <p>Filter by length</p>
         <select name='time' value={this.props.length} onChange={this.handleChange}>
           <option value='long'>Long</option>
           <option value='short'>Short</option>
