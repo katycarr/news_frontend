@@ -3,12 +3,14 @@ import { articles } from './articles'
 import { authentication } from './authentication'
 import { topics } from './topics'
 import { sources } from './sources'
+import { filter} from './filter'
 
 const rootReducer = combineReducers({
   authentication,
   articles,
   topics,
-  sources
+  sources,
+  filter
 })
 
 export default rootReducer

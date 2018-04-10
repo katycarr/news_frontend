@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import FilterContainer from './FilterContainer'
+import LengthFilter from './LengthFilter'
 
 class TopicsContainer extends React.Component {
 
@@ -14,6 +15,7 @@ class TopicsContainer extends React.Component {
         {topics}
         <Link to='/topics'>Edit my topics</Link>
         <FilterContainer />
+        <LengthFilter />
       </div>)
   }
 }
