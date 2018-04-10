@@ -1,0 +1,14 @@
+div.topics-container {
+  height:100%;
+  background-color:lightblue;
+  flex: auto;
+  flex-grow: 2;
+
+}
+
+div.topics-container li.topic {
+  list-style-type: none;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}

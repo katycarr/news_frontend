@@ -12,12 +12,14 @@ class ArticleContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props.articles)
     let articles;
     if (this.props.articles.length > 0) {
       articles = this.props.articles.map(article => {
         return <ArticleCard key={article.id} article={article}/>
       })
-      return(<div className='articles-container'>{articles ? articles : null}</div>)
+      return(
+        <div className='articles-container'>{articles ? articles : null}</div>)
     } else {
       return (<div className='articles-container'><div className="loader"></div></div>)
     }
