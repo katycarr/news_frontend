@@ -3,7 +3,15 @@ import { connect } from 'react-redux'
 import SourceCheckbox from './SourceCheckbox'
 
 class FilterContainer extends React.Component {
+  state = {
+    visible: false
+  }
 
+  toggleVisibility = () => {
+    this.setState({
+      visible: !this.state.visible
+    })
+  }
 
 
   render() {
@@ -12,7 +20,8 @@ class FilterContainer extends React.Component {
     })
     return(
       <div>
-        {options}
+        <button onClick={this.toggleVisibility}>Show/hide</button>
+          {this.state.visible ? options : null}
       </div>
     )
   }
