@@ -12,10 +12,12 @@ class ArticleContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.articles)
     let articles;
     if (this.props.articles.length > 0) {
-      articles = this.props.articles.map(article => {
+      const filteredArticles = this.props.articles.filter(article => {
+        return this.props.checkedSources.includes(article.source)
+      })
+      articles = filteredArticles.map(article => {
         return <ArticleCard key={article.id} article={article}/>
       })
       return(
@@ -29,7 +31,8 @@ class ArticleContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     articles: state.articles.all,
-    user: state.authentication.user
+    user: state.authentication.user,
+    checkedSources: state.sources.checked
   }
 }
 
