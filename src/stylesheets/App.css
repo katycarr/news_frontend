@@ -8,7 +8,6 @@ div.home-container {
 div.articles-container {
   grid-column: 2 / 4;
   grid-row: 2 / 3;
-  border:1px solid black;
 }
 
 div.article {

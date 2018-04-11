@@ -6,7 +6,8 @@ import { createTopic } from '../actions/topics'
 class TopicCard extends React.Component {
 
   handleClick = e => {
-    this.props.createTopic(this.props.data)
+    const topic = {name: this.props.data.label, url: this.props.data.uri}
+    this.props.createTopic(topic)
   }
 
   render() {

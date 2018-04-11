@@ -9,7 +9,7 @@ class TopicsContainer extends React.Component {
 
   render() {
     const topics = this.props.topics.map(topic => {
-      return <li class='topic' key={topic.id}>{topic.name}</li>
+      return <li className='topic' key={topic.id}>{topic.name}</li>
     })
     return(
       <div className='topics-container'>

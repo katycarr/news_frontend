@@ -13,11 +13,13 @@ class ArticleContainer extends React.Component {
 
 
   render() {
-    if (this.props.articles.length > 0) {
+    if (this.props.loaded && this.props.articles.length >0) {
       return(
         <div className='articles-container'><ArticleList /></div>)
-    } else {
+    } else if(!this.props.loaded) {
       return (<div className='articles-container'><div className="loader"></div></div>)
+    } else {
+      return (<div className='articles-container'><div>No stories yet!</div></div>)
     }
   }
 }
@@ -25,9 +27,7 @@ class ArticleContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     articles: state.articles.all,
-    user: state.authentication.user,
-    checkedSources: state.sources.checked,
-    readtime: state.filter.length
+    loaded: state.articles.loaded
   }
 }
 

@@ -2,6 +2,9 @@
 export const fetchArticles = () => {
 
   return (dispatch) => {
+    dispatch({
+      type: 'BEGIN_LOAD'
+    })
     fetch('http://localhost:3000/articles', {
       headers: {
         "Authorization": localStorage.getItem('token')
