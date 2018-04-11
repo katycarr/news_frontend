@@ -1,14 +1,15 @@
 div.topics-container {
-  /* grid-column: 1 / 2;
-  grid-row: 1 /3; */
-  background-color:lightblue;
-  height:100%;
-  /* color:rgb(51, 0, 102); */
   background-color: black;
   color:white;
   position:fixed;
+
+}
+
+div.sidebar {
+  height:100%;
   width:250px;
   overflow:scroll;
+  top:0;
 }
 
 div.topics-container h1 {
@@ -42,7 +43,7 @@ div.topics-container div.topic-list {
   margin:auto;
 }
 
-div.topics-container li.topic {
+div.topic-list li.topic {
   list-style-type: none;
   text-align: left;
   padding:10px;
@@ -51,4 +52,10 @@ div.topics-container li.topic {
 
 div.topics-container div.length-filter {
   text-align: center;
+}
+
+li.topic a.delete {
+  display:inline-block;
+  position:absolute;
+  right:20px;
 }

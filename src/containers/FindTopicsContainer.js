@@ -6,6 +6,9 @@ import UserTopicsList from '../components/UserTopicsList'
 import withAuth from '../hocs/withAuth'
 import Nav from './Nav'
 import PopularTopics from './PopularTopics'
+import '../stylesheets/Topics.css'
+import '../stylesheets/Popular.css'
+import '../stylesheets/FindTopics.css'
 
 class FindTopicsContainer extends React.Component {
   state = {
@@ -36,15 +39,18 @@ class FindTopicsContainer extends React.Component {
         <Nav />
         <PopularTopics />
         <UserTopicsList topics={this.props.topics} />
-        <form onSubmit={this.handleSubmit}>
-          <input type='text' name='input' value={this.state.input} onChange={this.handleChange} />
-          <input type='submit' name='submit'/>
-        </form>
-        {this.props.searchResults.length > 0 ?
-          <SearchResultsList topics={this.props.searchResults} />
-          :
-          null
-        }
+        <div className='search-topics'>
+          <h1>Search for topics</h1>
+          <form onSubmit={this.handleSubmit}>
+            <input type='text' name='input' value={this.state.input} onChange={this.handleChange} />
+            <input type='submit' name='submit'/>
+          </form>
+          {this.props.searchResults.length > 0 ?
+            <SearchResultsList topics={this.props.searchResults} />
+            :
+            null
+          }
+        </div>
       </div>
     )
   }

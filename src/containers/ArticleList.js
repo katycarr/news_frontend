@@ -31,7 +31,7 @@ class ArticleList extends React.Component {
       return <ArticleCard key={article.id} article={article}/>
     })
     return(
-      <div>
+      <div className='articles-container'>
         {articleCards}
       </div>
     )

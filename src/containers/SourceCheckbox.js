@@ -14,7 +14,7 @@ class SourceCheckbox extends React.Component {
 
   render() {
     return (
-      <div>
+      <li className='topic'>
         {this.props.source}
         <input
           type='checkbox'
@@ -22,7 +22,7 @@ class SourceCheckbox extends React.Component {
           checked={this.props.isChecked}
           onChange={this.toggleChecked}
         />
-      </div>
+    </li>
     )
   }
 }

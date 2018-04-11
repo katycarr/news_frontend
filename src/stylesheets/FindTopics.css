@@ -1,0 +1,19 @@
+div.search-topics {
+  width:60%;
+  min-width:500px;
+  margin:auto;
+  position:relative;
+}
+div.search-topics input {
+  line-height: 2rem;
+  font-size: 1rem;
+  display:block;
+  margin:auto;
+  margin-bottom:20px;
+}
+
+div.results-list {
+  width:70%;
+  margin:auto;
+  position:relative;
+}

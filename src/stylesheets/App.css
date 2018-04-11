@@ -1,23 +1,19 @@
 div.home-container {
-  display:grid;
-  grid-template-columns: 250px auto auto;
-  grid-template-rows: 50px auto;
 }
 
 
 div.articles-container {
-  grid-column: 2 / 4;
-  grid-row: 2 / 3;
+  margin-left: 270px;
 }
 
 div.article {
   border-bottom: 1px solid lightgrey;
-  position:relative;
 }
 
 div.nav {
-  grid-column: 2 / 4;
-  grid-row: 1 / 2;
+  position:relative;
+  top:0;
+  right:0;
   text-align:right;
 }
 
@@ -25,23 +21,13 @@ div.nav a, div.nav button {
   padding:10px;
 }
 
-div.popular-topics {
-  position:absolute;
-  width:30%;
-  left:70%;
-}
-
 img.article-img {
-  position:absolute;
-  left:0;
-  top:0;
+  float:left;
+  padding:10px;
   max-width:200px;
 }
 
 div.article-content {
-  position:relative;
-  width:70%;
-  left:250px;
   text-align:left;
 }
 

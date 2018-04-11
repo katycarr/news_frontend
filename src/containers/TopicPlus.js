@@ -9,9 +9,9 @@ class TopicPlus extends React.Component {
   }
   render() {
     return (
-      <li>{this.props.topic.name}
+      <li className='topic'>{this.props.topic.name}
         {this.props.userTopics.filter(t => t.id === this.props.topic.id).length >0 ? null :
-        <button onClick={this.handleClick}>+</button>
+        <a className='delete' onClick={this.handleClick}>+</a>
         }
       </li>
     )

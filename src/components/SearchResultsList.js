@@ -6,7 +6,7 @@ const SearchResultsList = ({topics}) => {
     return <TopicCard key={topic.uri} data={topic} />
   })
   return(
-    <div>{topicCards}</div>
+    <div className='results-list'>{topicCards}</div>
   )
 }
 

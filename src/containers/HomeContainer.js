@@ -17,13 +17,11 @@ class HomeContainer extends React.Component {
 
   render() {
     return(
-      <div>
         <div className='home-container'>
           <Nav />
           <TopicsContainer />
           <ArticleContainer />
         </div>
-      </div>
     )
   }
 }

@@ -9,9 +9,9 @@ class UserTopic extends React.Component {
   }
   render() {
     return(
-      <li>
+      <li className='topic'>
         {this.props.topic.name}
-        <button onClick={this.handleClick}>X</button>
+         <a className='delete' onClick={this.handleClick}>X</a>
       </li>
     )
   }

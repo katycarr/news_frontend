@@ -15,7 +15,7 @@ class ArticleContainer extends React.Component {
   render() {
     if (this.props.loaded && this.props.articles.length >0) {
       return(
-        <div className='articles-container'><ArticleList /></div>)
+        <ArticleList />)
     } else if(!this.props.loaded) {
       return (<div className='articles-container'><div className="loader"></div></div>)
     } else {
