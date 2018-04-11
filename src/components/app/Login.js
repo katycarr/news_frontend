@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { loginUser } from '../actions/user'
+import { loginUser } from '../../actions/user'
 import { withRouter, Link } from 'react-router-dom'
-import '../stylesheets/Login.css'
+import '../../stylesheets/Login.css'
 
 class Login extends React.Component {
   state = {

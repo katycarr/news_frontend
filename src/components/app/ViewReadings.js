@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ArticleGroup from '../components/ArticleGroup'
-import Page from '../components/Page'
+import ArticleGroup from '../articles/ArticleGroup'
+import Page from '../Page'
 
 class ViewReadings extends React.Component {
 

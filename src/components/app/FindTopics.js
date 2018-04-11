@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { searchTopics } from '../actions/topics'
-import SearchResultsList from '../components/SearchResultsList'
-import PopularTopics from './PopularTopics'
-import Page from '../components/Page'
-import '../stylesheets/Topics.css'
-import '../stylesheets/Popular.css'
-import '../stylesheets/FindTopics.css'
+import { searchTopics } from '../../actions/topics'
+import SearchResultsList from '../SearchResultsList'
+import PopularTopics from '../PopularTopics'
+import Page from '../Page'
+import '../../stylesheets/Topics.css'
+import '../../stylesheets/Popular.css'
+import '../../stylesheets/FindTopics.css'
 
 class FindTopicsContainer extends React.Component {
   state = {

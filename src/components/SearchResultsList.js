@@ -1,5 +1,5 @@
 import React from 'react'
-import TopicCard from '../containers/TopicCard'
+import TopicCard from './TopicCard'
 
 const SearchResultsList = ({topics}) => {
   const topicCards = topics.map(topic => {

@@ -1,9 +1,9 @@
 import React from 'react'
-import ArticleContainer from './ArticleContainer'
+import ArticleContainer from '../articles/ArticleContainer'
 import { connect } from 'react-redux'
-import withAuth from '../hocs/withAuth'
-import {fetchTopics} from '../actions/topics'
-import Page from '../components/Page'
+import withAuth from '../../hocs/withAuth'
+import {fetchTopics} from '../../actions/topics'
+import Page from '../Page'
 
 
 

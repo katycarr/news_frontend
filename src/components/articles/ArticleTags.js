@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getArticleTopics } from '../actions/topics'
-import TopicListItem from '../components/TopicListItem'
-import AddTopic from './buttons/AddTopic'
+import { getArticleTopics } from '../../actions/topics'
+import TopicListItem from '../TopicListItem'
+import AddTopic from '../buttons/AddTopic'
 
 class ArticleTags extends React.Component {
 

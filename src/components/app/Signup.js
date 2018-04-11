@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createUser } from '../actions/user'
+import { createUser } from '../../actions/user'
 import { withRouter, Link } from 'react-router-dom'
-import '../stylesheets/Login.css'
+import '../../stylesheets/Login.css'
 
 class Signup extends React.Component {
   state = {

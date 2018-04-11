@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../containers/Nav'
+import Nav from './Nav'
 import Sidebar from './sidebar/Sidebar'
 import FilterGroup from './sidebar/FilterGroup'
 

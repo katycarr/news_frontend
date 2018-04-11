@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ArticleGroup from '../components/ArticleGroup'
+import ArticleGroup from './ArticleGroup'
 
 class ArticleList extends React.Component {
 

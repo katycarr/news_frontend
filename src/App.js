@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
-import Signup from './components/Signup'
-import Login from './components/Login'
 import { connect } from 'react-redux'
-
-import HomeContainer from './components/HomeContainer'
 import {getUser} from './actions/user'
 import './stylesheets/App.css'
-import FindTopicsContainer from './components/FindTopicsContainer'
 import {Route, withRouter} from 'react-router-dom'
 import {fetchTopics} from './actions/topics'
 import {fetchArticles} from './actions/articles'
 import {getReadings} from './actions/readings'
-import ViewReadings from './components/ViewReadings'
+import ViewReadings from './components/app/ViewReadings'
+import Signup from './components/app/Signup'
+import Login from './components/app/Login'
+import Home from './components/app/Home'
+import FindTopics from './components/app/FindTopics'
 
 
 
@@ -27,10 +25,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path='/' render={() => <HomeContainer />} />
+        <Route exact path='/' render={() => <Home />} />
         <Route path='/login' render={() => <Login />} />
         <Route path='/signup' render={() => <Signup />} />
-        <Route path='/topics' render={() => <FindTopicsContainer />} />
+        <Route path='/topics' render={() => <FindTopics />} />
         <Route path='/readinglist' render={() => <ViewReadings /> } />
       </div>
     );

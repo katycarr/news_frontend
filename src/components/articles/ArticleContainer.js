@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ArticleList from './ArticleList'
-import '../stylesheets/Loader.css'
+import '../../stylesheets/Loader.css'
 
 
 class ArticleContainer extends React.Component {

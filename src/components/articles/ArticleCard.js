@@ -1,6 +1,6 @@
 import React from 'react'
-import AddToReading from '../containers/buttons/AddToReading'
-import ArticleTags from '../containers/ArticleTags'
+import AddToReading from '../buttons/AddToReading'
+import ArticleTags from './ArticleTags'
 
 class ArticleCard extends React.Component {
 
