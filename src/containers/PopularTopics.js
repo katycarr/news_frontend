@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getPopularTopics} from '../actions/topics'
-import TopicPlus from './TopicPlus'
+import TopicListItem from '../components/TopicListItem'
+import AddTopicButton from './AddTopicButton'
 
 class PopularTopics extends React.Component {
   componentDidMount = () => {
@@ -12,7 +13,9 @@ class PopularTopics extends React.Component {
 
   render() {
     const topics = this.props.popTopics.map(topic => {
-      return <TopicPlus key={topic.id} topic={topic} />
+      return <TopicListItem key={topic.id} topic={topic}>
+        <AddTopicButton topic={topic} />
+      </TopicListItem>
     })
     return (
       <div className='popular-topics topics-container'>

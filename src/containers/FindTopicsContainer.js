@@ -2,10 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { searchTopics, fetchTopics } from '../actions/topics'
 import SearchResultsList from '../components/SearchResultsList'
-import UserTopicsList from '../components/UserTopicsList'
 import withAuth from '../hocs/withAuth'
 import Nav from './Nav'
 import PopularTopics from './PopularTopics'
+import TopicsContainer from './TopicsContainer'
 import '../stylesheets/Topics.css'
 import '../stylesheets/Popular.css'
 import '../stylesheets/FindTopics.css'
@@ -38,7 +38,7 @@ class FindTopicsContainer extends React.Component {
       <div>
         <Nav />
         <PopularTopics />
-        <UserTopicsList topics={this.props.topics} />
+        <TopicsContainer />
         <div className='search-topics'>
           <h1>Search for topics</h1>
           <form onSubmit={this.handleSubmit}>

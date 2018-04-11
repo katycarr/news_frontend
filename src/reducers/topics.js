@@ -1,7 +1,8 @@
 const initialState = {
   all: [],
   searchResults: [],
-  popular: []
+  popular: [],
+  articles: {}
 }
 
 export function topics(state=initialState, action) {
@@ -16,6 +17,10 @@ export function topics(state=initialState, action) {
       return {...state, all: [...state.all, action.payload]}
     case 'POP_TOPICS':
       return {...state, popular: action.payload}
+    case 'ARTICLE_TOPICS':
+      const id = action.payload.articleId
+      const tags = action.payload.tags
+      return {...state, articles: {...state.articles, ...{[id]:tags}}}
     default:
       return state
   }

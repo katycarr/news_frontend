@@ -94,3 +94,22 @@ export const getPopularTopics = () => {
       })
   }
 }
+
+export const getArticleTopics = (article_id) => {
+  return (dispatch) => {
+    fetch('http://localhost:3000/topics?article_id='+article_id,
+        {headers: {
+          "Authorization": localStorage.getItem('token')
+        }})
+      .then(res => res.json())
+      .then(json => {
+        dispatch({
+          type: 'ARTICLE_TOPICS',
+          payload: {
+            articleId: article_id,
+            tags: json
+          }
+        })
+      })
+  }
+}

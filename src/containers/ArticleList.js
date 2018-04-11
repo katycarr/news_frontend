@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ArticleCard from '../components/ArticleCard'
+import ArticleGroup from '../components/ArticleGroup'
 
 class ArticleList extends React.Component {
 
@@ -27,13 +27,9 @@ class ArticleList extends React.Component {
 
   render() {
     const filteredArticles = this.filterBySources(this.filterByTime(this.props.articles))
-    const articleCards = filteredArticles.map(article => {
-      return <ArticleCard key={article.id} article={article}/>
-    })
+
     return(
-      <div className='articles-container'>
-        {articleCards}
-      </div>
+        <ArticleGroup articles={filteredArticles} />
     )
   }
 }

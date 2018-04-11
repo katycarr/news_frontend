@@ -4,10 +4,6 @@ import { toggleCheck } from '../actions/sources'
 
 class SourceCheckbox extends React.Component {
 
-  isChecked = () => {
-    return this.props.checked.includes(this.props.source)
-  }
-
   toggleChecked = () => {
     this.props.toggleCheck(this.props.source, this.props.isChecked)
   }

@@ -54,7 +54,7 @@ div.topics-container div.length-filter {
   text-align: center;
 }
 
-li.topic a.delete {
+div.topics-container li.topic a.delete {
   display:inline-block;
   position:absolute;
   right:20px;

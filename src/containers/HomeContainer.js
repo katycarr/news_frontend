@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import withAuth from '../hocs/withAuth'
 import {fetchTopics} from '../actions/topics'
 import Nav from './Nav'
+import FilterGroup from '../components/FilterGroup'
 
 
 class HomeContainer extends React.Component {
@@ -13,7 +14,9 @@ class HomeContainer extends React.Component {
     return(
         <div className='home-container'>
           <Nav />
-          <TopicsContainer />
+          <TopicsContainer>
+            <FilterGroup />
+          </TopicsContainer>
           <ArticleContainer />
         </div>
     )

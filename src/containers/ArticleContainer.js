@@ -1,16 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {fetchArticles} from '../actions/articles'
 import ArticleList from './ArticleList'
 import '../stylesheets/Loader.css'
 
 
 class ArticleContainer extends React.Component {
-
-  componentDidMount = () => {
-    this.props.fetchArticles()
-  }
-
 
   render() {
     if (this.props.loaded && this.props.articles.length >0) {
@@ -31,4 +25,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchArticles})(ArticleContainer)
+export default connect(mapStateToProps, {})(ArticleContainer)

@@ -1,17 +1,8 @@
 import React from 'react'
-import ArticleDetail from './ArticleDetail'
 import AddToReading from '../containers/AddToReading'
+import ArticleTags from '../containers/ArticleTags'
 
 class ArticleCard extends React.Component {
-  state = {
-    showDetail: false
-  }
-
-  handleClick = () => {
-    this.setState({
-      showDetail: !this.state.showDetail
-    })
-  }
 
   render() {
     const date = new Date(this.props.article.published_at)
@@ -25,10 +16,9 @@ class ArticleCard extends React.Component {
           <h5>{this.props.article.author} - {this.props.article.source}</h5>
           <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
           <p>Reading Time: {this.props.article.reading_time} | Tone: {this.props.article.emotion}</p>
-          <button onClick={this.handleClick}>Toggle Detail</button>
           <p>{this.props.article.description}</p>
+          <ArticleTags article={this.props.article} />
         </div>
-        {this.state.showDetail ? <ArticleDetail article={this.props.article} /> : null}
       </div>
     )
   }

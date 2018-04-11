@@ -10,6 +10,7 @@ import './stylesheets/App.css'
 import FindTopicsContainer from './containers/FindTopicsContainer'
 import {Route, withRouter} from 'react-router-dom'
 import {fetchTopics} from './actions/topics'
+import {fetchArticles} from './actions/articles'
 import ViewReadings from './containers/ViewReadings'
 
 
@@ -18,6 +19,7 @@ import ViewReadings from './containers/ViewReadings'
 class App extends Component {
   componentDidMount = () => {
     this.props.fetchTopics()
+    this.props.fetchArticles()
   }
 
   render() {
@@ -39,4 +41,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default withRouter(connect(mapStateToProps, {getUser, fetchTopics})(App));
+export default withRouter(connect(mapStateToProps, {getUser, fetchTopics, fetchArticles})(App));

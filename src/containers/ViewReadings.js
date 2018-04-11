@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getReadings } from '../actions/readings'
 import Nav from './Nav'
-import UserTopicsList from '../components/UserTopicsList'
-import ArticleCard from '../components/ArticleCard'
+import TopicsContainer from './TopicsContainer'
+import ArticleGroup from '../components/ArticleGroup'
 
 class ViewReadings extends React.Component {
 
@@ -12,19 +12,12 @@ class ViewReadings extends React.Component {
   }
 
   render() {
-    console.log(this.props)
-    const readings = this.props.readings.map(reading => {
-      return <ArticleCard key={reading.id} article={reading.article} />
-    })
+    const articles = this.props.readings.map(reading => reading.article)
     return(
       <div>
         <Nav />
-        <UserTopicsList topics={this.props.topics} />
-        <div className='articles-container'>
-          <div className='article-list'>
-            {readings}
-          </div>
-        </div>
+        <TopicsContainer />
+        {this.props.loaded ? <ArticleGroup articles={articles} /> : null}
       </div>
     )
   }
@@ -34,7 +27,6 @@ function mapStateToProps(state) {
   return {
     readings: state.readings.all,
     loaded: state.readings.loaded,
-    topics: state.topics.all
   }
 }
 

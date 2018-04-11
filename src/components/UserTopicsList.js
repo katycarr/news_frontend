@@ -1,14 +1,18 @@
 import React from 'react'
-import UserTopic from '../containers/UserTopic'
 import '../stylesheets/Topics.css'
+import TopicListItem from './TopicListItem'
+import DeleteTopicButton from '../containers/DeleteTopicButton'
 
-const UserTopicsList = ({topics}) => {
-  const topicLis = topics.map(topic => {
-    return <UserTopic key={topic.id} topic={topic}/>
+const UserTopicsList = (props) => {
+  const topicLis = props.topics.map(topic => {
+    return <TopicListItem key={topic.id} topic={topic}>
+      <DeleteTopicButton topic={topic} />
+    </TopicListItem>
   })
   return(
-    <div className='topics-container sidebar'>
+    <div>
       <h1>My Topics</h1>
+      {props.children}
       <div className='topic-list'>
         {topicLis}
       </div>
