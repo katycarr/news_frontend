@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import Signup from './containers/Signup'
-import Login from './containers/Login'
+import Signup from './components/Signup'
+import Login from './components/Login'
 import { connect } from 'react-redux'
 
-import HomeContainer from './containers/HomeContainer'
+import HomeContainer from './components/HomeContainer'
 import {getUser} from './actions/user'
 import './stylesheets/App.css'
-import FindTopicsContainer from './containers/FindTopicsContainer'
+import FindTopicsContainer from './components/FindTopicsContainer'
 import {Route, withRouter} from 'react-router-dom'
 import {fetchTopics} from './actions/topics'
 import {fetchArticles} from './actions/articles'
 import {getReadings} from './actions/readings'
-import ViewReadings from './containers/ViewReadings'
+import ViewReadings from './components/ViewReadings'
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { filterByLength } from '../actions/filter'
+import { filterByLength } from '../../actions/filter'
 
 class FilterContainer extends React.Component {
 

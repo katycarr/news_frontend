@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
-import '../stylesheets/Topics.css'
-import UserTopicsList from '../components/UserTopicsList'
+import '../../stylesheets/Topics.css'
+import UserTopicsList from './UserTopicsList'
 
 
-class TopicsContainer extends React.Component {
+class Sidebar extends React.Component {
 
   render() {
     return(
@@ -25,4 +25,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(TopicsContainer)
+export default connect(mapStateToProps)(Sidebar)

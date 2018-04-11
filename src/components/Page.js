@@ -1,15 +1,15 @@
 import React from 'react'
 import Nav from '../containers/Nav'
-import TopicsContainer from '../containers/TopicsContainer'
-import FilterGroup from '../components/FilterGroup'
+import Sidebar from './sidebar/Sidebar'
+import FilterGroup from './sidebar/FilterGroup'
 
 const Page = (props) => {
   return(
     <div>
       <Nav />
-      <TopicsContainer>
+      <Sidebar>
         {props.withFilters ? <FilterGroup /> : null}
-      </TopicsContainer>
+      </Sidebar>
       {props.children}
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
-import '../stylesheets/Topics.css'
-import TopicListItem from './TopicListItem'
-import DeleteTopic from '../containers/buttons/DeleteTopic'
+import '../../stylesheets/Topics.css'
+import TopicListItem from '../TopicListItem'
+import DeleteTopic from '../buttons/DeleteTopic'
 
 const UserTopicsList = (props) => {
   const topicLis = props.topics.map(topic => {
