@@ -1,12 +1,12 @@
 import React from 'react'
 import '../stylesheets/Topics.css'
 import TopicListItem from './TopicListItem'
-import DeleteTopicButton from '../containers/DeleteTopicButton'
+import DeleteTopic from '../containers/buttons/DeleteTopic'
 
 const UserTopicsList = (props) => {
   const topicLis = props.topics.map(topic => {
     return <TopicListItem key={topic.id} topic={topic}>
-      <DeleteTopicButton topic={topic} />
+      <DeleteTopic topic={topic} />
     </TopicListItem>
   })
   return(

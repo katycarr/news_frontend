@@ -1,11 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { searchTopics, fetchTopics } from '../actions/topics'
+import { searchTopics } from '../actions/topics'
 import SearchResultsList from '../components/SearchResultsList'
-import withAuth from '../hocs/withAuth'
-import Nav from './Nav'
 import PopularTopics from './PopularTopics'
-import TopicsContainer from './TopicsContainer'
+import Page from '../components/Page'
 import '../stylesheets/Topics.css'
 import '../stylesheets/Popular.css'
 import '../stylesheets/FindTopics.css'
@@ -13,12 +11,6 @@ import '../stylesheets/FindTopics.css'
 class FindTopicsContainer extends React.Component {
   state = {
     input:''
-  }
-
-  componentDidMount = () => {
-    if (this.props.topics.length === 0) {
-      this.props.fetchTopics()
-    }
   }
 
   handleSubmit = e => {
@@ -35,10 +27,9 @@ class FindTopicsContainer extends React.Component {
 
   render() {
     return(
-      <div>
-        <Nav />
+      <Page>
         <PopularTopics />
-        <TopicsContainer />
+
         <div className='search-topics'>
           <h1>Search for topics</h1>
           <form onSubmit={this.handleSubmit}>
@@ -51,17 +42,15 @@ class FindTopicsContainer extends React.Component {
             null
           }
         </div>
-      </div>
+      </Page>
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    topics: state.topics.all,
-    user: state.authentication.user,
     searchResults: state.topics.searchResults
   }
 }
 
-export default connect(mapStateToProps, {searchTopics, fetchTopics})(withAuth(FindTopicsContainer))
+export default connect(mapStateToProps, {searchTopics})(FindTopicsContainer)

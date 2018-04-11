@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getArticleTopics } from '../actions/topics'
 import TopicListItem from '../components/TopicListItem'
-import AddTopicButton from './AddTopicButton'
+import AddTopic from './buttons/AddTopic'
 
 class ArticleTags extends React.Component {
 
@@ -17,7 +17,7 @@ class ArticleTags extends React.Component {
     if(this.props.tags) {
       tagEls = this.props.tags.map(tag => {
         return <TopicListItem key={tag.id} topic={tag}>
-            <AddTopicButton topic={tag} />
+            <AddTopic topic={tag} />
           </TopicListItem>
       })
     }

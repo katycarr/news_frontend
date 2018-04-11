@@ -1,23 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getReadings } from '../actions/readings'
-import Nav from './Nav'
-import TopicsContainer from './TopicsContainer'
 import ArticleGroup from '../components/ArticleGroup'
+import Page from '../components/Page'
 
 class ViewReadings extends React.Component {
-
-  componentDidMount = () => {
-    this.props.getReadings()
-  }
 
   render() {
     const articles = this.props.readings.map(reading => reading.article)
     return(
       <div>
-        <Nav />
-        <TopicsContainer />
-        {this.props.loaded ? <ArticleGroup articles={articles} /> : null}
+        <Page>
+          {this.props.loaded ? <ArticleGroup articles={articles} /> : null}
+        </Page>
       </div>
     )
   }
@@ -30,4 +24,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {getReadings})(ViewReadings)
+export default connect(mapStateToProps)(ViewReadings)

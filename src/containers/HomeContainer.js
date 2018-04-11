@@ -1,11 +1,10 @@
 import React from 'react'
 import ArticleContainer from './ArticleContainer'
-import TopicsContainer from './TopicsContainer'
 import { connect } from 'react-redux'
 import withAuth from '../hocs/withAuth'
 import {fetchTopics} from '../actions/topics'
-import Nav from './Nav'
-import FilterGroup from '../components/FilterGroup'
+import Page from '../components/Page'
+
 
 
 class HomeContainer extends React.Component {
@@ -13,11 +12,9 @@ class HomeContainer extends React.Component {
   render() {
     return(
         <div className='home-container'>
-          <Nav />
-          <TopicsContainer>
-            <FilterGroup />
-          </TopicsContainer>
-          <ArticleContainer />
+          <Page withFilters={true}>
+            <ArticleContainer />
+          </Page>
         </div>
     )
   }

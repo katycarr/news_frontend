@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {deleteUserTopic} from '../actions/topics'
+import {deleteUserTopic} from '../../actions/topics'
 
-class DeleteTopicButton extends React.Component {
+class DeleteTopic extends React.Component {
 
   handleClick = () => {
     this.props.deleteUserTopic(this.props.topic.id)
@@ -14,4 +14,4 @@ class DeleteTopicButton extends React.Component {
   }
 }
 
-export default connect(null, {deleteUserTopic})(DeleteTopicButton)
+export default connect(null, {deleteUserTopic})(DeleteTopic)

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createReading } from '../actions/readings'
+import { createReading } from '../../actions/readings'
 
 class AddToReading extends React.Component {
 

@@ -14,8 +14,9 @@ class Nav extends React.Component {
   render() {
     return(
       <div className="nav">
-        <Link to="/">My News</Link>
+        <Link to="/">News</Link>
         <Link to="/topics">My Topics</Link>
+        <Link to='/readinglist'>Saved Articles</Link>
         <button onClick={this.logout}>Logout</button>
       </div>
     )
