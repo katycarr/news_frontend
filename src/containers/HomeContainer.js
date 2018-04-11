@@ -9,12 +9,6 @@ import Nav from './Nav'
 
 class HomeContainer extends React.Component {
 
-
-
-  componentDidMount = () => {
-    this.props.fetchTopics()
-  }
-
   render() {
     return(
         <div className='home-container'>

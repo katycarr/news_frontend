@@ -10,12 +10,15 @@ import './stylesheets/App.css'
 import FindTopicsContainer from './containers/FindTopicsContainer'
 import {Route, withRouter} from 'react-router-dom'
 import {fetchTopics} from './actions/topics'
+import ViewReadings from './containers/ViewReadings'
 
 
 
 
 class App extends Component {
-
+  componentDidMount = () => {
+    this.props.fetchTopics()
+  }
 
   render() {
     return (
@@ -24,6 +27,7 @@ class App extends Component {
         <Route path='/login' render={() => <Login />} />
         <Route path='/signup' render={() => <Signup />} />
         <Route path='/topics' render={() => <FindTopicsContainer />} />
+        <Route path='/readinglist' render={() => <ViewReadings /> } />
       </div>
     );
   }

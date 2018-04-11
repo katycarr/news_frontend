@@ -1,5 +1,6 @@
 import React from 'react'
 import ArticleDetail from './ArticleDetail'
+import AddToReading from '../containers/AddToReading'
 
 class ArticleCard extends React.Component {
   state = {
@@ -20,6 +21,7 @@ class ArticleCard extends React.Component {
         : null }
         <div className='article-content'>
           <a href={this.props.article.url}><h3>{this.props.article.title}</h3></a>
+          <AddToReading article={this.props.article} />
           <h5>{this.props.article.author} - {this.props.article.source}</h5>
           <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
           <p>Reading Time: {this.props.article.reading_time} | Tone: {this.props.article.emotion}</p>
