@@ -9,14 +9,11 @@ class AddTopicButton extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.props.userTopics.filter(t => t.id === this.props.topic.id).length >0 ? null :
-        <a className='delete' onClick={this.handleClick}>+</a>
-
-        }
-      </div>
-    )
+    if (this.props.userTopics.filter(t => t.id === this.props.topic.id).length >0) {
+      return null
+    } else {
+      return <a className='delete' onClick={this.handleClick}>+</a>
+    }
   }
 }
 

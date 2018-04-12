@@ -24,9 +24,7 @@ class ArticleTags extends React.Component {
 
     return(
       <div className='article-tags'>
-        <div className='article-topics'>
           {tagEls ? tagEls : null}
-        </div>
       </div>
     )
   }
