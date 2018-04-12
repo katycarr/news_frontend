@@ -11,7 +11,7 @@ const DisplayArticle = (props) => {
       <div className='article-content'>
         <a href={props.article.url}><h3>{props.article.title}</h3></a>
         <h5>{props.article.author} - {props.article.source}</h5>
-        <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
+        <p className='timestamp'>{date.toDateString()} {date.toLocaleTimeString()}</p>
         <p>Reading Time: {props.article.reading_time} | Tone: {props.article.emotion}</p>
         <p>{props.article.description}</p>
       </div>

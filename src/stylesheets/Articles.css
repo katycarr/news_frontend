@@ -4,6 +4,7 @@ div.articles-container {
 
 div.article {
   /* border-bottom: 1px solid lightgrey; */
+
 }
 
 img.article-img {
@@ -29,8 +30,14 @@ div.article-content h5 {
   margin-bottom: 10px;
 }
 
+div.article-content p.timestamp {
+  display:inline-block;
+  text-align: right;
+}
+
 div.article-tags {
   list-style-type:none;
+  margin-bottom: 50px;
 }
 
 div.article-tags li.topic {
