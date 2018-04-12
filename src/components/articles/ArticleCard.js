@@ -1,27 +1,40 @@
 import React from 'react'
 import AddToReading from '../buttons/AddToReading'
 import ArticleTags from './ArticleTags'
+import DisplayArticle from './DisplayArticle'
+import ArchiveReading from '../buttons/ArchiveReading'
+import {connect} from 'react-redux'
 
 class ArticleCard extends React.Component {
 
+  whichButton = () => {
+    if (!this.props.reading) {
+      return <AddToReading article={this.props.article} />
+    } else if (this.props.reading['read?']) {
+      return <div>read</div>
+    } else {
+      return <ArchiveReading reading={this.props.reading} />
+    }
+  }
+
   render() {
-    const date = new Date(this.props.article.published_at)
+    const readingButton = this.whichButton()
     return(
-      <div className='article'>
-        {this.props.article.img_url ?<img src={this.props.article.img_url} alt={this.props.article.title} className='article-img'/>
-        : null }
-        <div className='article-content'>
-          <a href={this.props.article.url}><h3>{this.props.article.title}</h3></a>
-          <AddToReading article={this.props.article} />
-          <h5>{this.props.article.author} - {this.props.article.source}</h5>
-          <p>{date.toDateString()} {date.toLocaleTimeString()}</p>
-          <p>Reading Time: {this.props.article.reading_time} | Tone: {this.props.article.emotion}</p>
-          <p>{this.props.article.description}</p>
-          <ArticleTags article={this.props.article} />
-        </div>
+      <div>
+        <DisplayArticle article={this.props.article}/>
+        {readingButton}
+        <ArticleTags article={this.props.article} />
       </div>
     )
   }
 }
 
-export default ArticleCard
+function mapStateToProps(state, ownProps) {
+
+    return {
+      reading: state.readings.all[ownProps.article.id]
+    }
+
+}
+
+export default connect(mapStateToProps)(ArticleCard)

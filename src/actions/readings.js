@@ -13,7 +13,6 @@ export const createReading = (articleId) => {
     fetch('http://localhost:3000/readings', options)
       .then(res => res.json())
       .then(json => {
-        console.log(json)
         dispatch({
           type: 'CREATE_READING',
           payload: json
@@ -41,4 +40,26 @@ export const getReadings = () => {
       })
   }
 
+}
+
+export const archiveReading = (readingId) => {
+  let options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type':'application/json',
+      Accept:'application/json',
+      "Authorization": localStorage.getItem('token')
+    }
+  }
+  return (dispatch) => {
+    fetch('http://localhost:3000/readings/'+readingId, options)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        dispatch({
+          type: 'ARCHIVE_READING',
+          payload: json
+        })
+      })
+  }
 }
