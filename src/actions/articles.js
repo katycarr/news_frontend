@@ -36,3 +36,21 @@ export const fetchMore = (currentCount) => {
       })
   }
 }
+
+export const getNewArticles = () => {
+
+  return (dispatch) => {
+    fetch('http://localhost:3000/new_articles', {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        dispatch({
+          type: 'NEW_ARTICLES',
+          payload: json ? json : []
+        })
+      })
+  }
+}

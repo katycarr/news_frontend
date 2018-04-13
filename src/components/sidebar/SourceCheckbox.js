@@ -14,7 +14,7 @@ class SourceCheckbox extends React.Component {
         {this.props.source}
         <label className='switch'>
           <input
-            class='check'
+            className='check'
             type='checkbox'
             value={this.props.source}
             checked={this.props.isChecked}

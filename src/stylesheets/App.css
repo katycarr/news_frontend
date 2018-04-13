@@ -17,6 +17,7 @@ div.nav a {
 
 div.nav a:hover {
   border-bottom: 1px dashed rgb(173, 70, 162);
+  font-weight: normal;
 }
 
 a {
@@ -32,4 +33,5 @@ a {
 a:hover {
   color: rgb(187, 143, 206);
   cursor:pointer;
+  font-weight: bold;
 }
