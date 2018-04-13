@@ -12,12 +12,16 @@ class SourceCheckbox extends React.Component {
     return (
       <li className='topic'>
         {this.props.source}
-        <input
-          type='checkbox'
-          value={this.props.source}
-          checked={this.props.isChecked}
-          onChange={this.toggleChecked}
-        />
+        <label className='switch'>
+          <input
+            class='check'
+            type='checkbox'
+            value={this.props.source}
+            checked={this.props.isChecked}
+            onChange={this.toggleChecked}
+          />
+          <span className='slider'></span>
+      </label>
     </li>
     )
   }

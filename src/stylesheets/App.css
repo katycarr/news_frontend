@@ -4,13 +4,19 @@ div.home-container {
 
 div.nav {
   position:relative;
-  top:0;
+  top:5px;
   right:0;
   text-align:right;
+  margin-bottom: 30px;
 }
 
-div.nav a, div.nav button {
-  padding:10px;
+div.nav a {
+  padding:3px;
+  margin:10px;
+}
+
+div.nav a:hover {
+  border-bottom: 1px dashed rgb(173, 70, 162);
 }
 
 a {

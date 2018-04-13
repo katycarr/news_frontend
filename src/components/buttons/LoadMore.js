@@ -9,7 +9,6 @@ class LoadMore extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return(
       <button onClick={this.handleClick}>Load More</button>
     )

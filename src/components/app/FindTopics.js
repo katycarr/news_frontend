@@ -4,7 +4,6 @@ import { searchTopics } from '../../actions/topics'
 import SearchResultsList from '../topics/SearchResultsList'
 import PopularTopics from '../topics/PopularTopics'
 import Page from '../Page'
-import '../../stylesheets/Topics.css'
 import '../../stylesheets/Popular.css'
 import '../../stylesheets/FindTopics.css'
 

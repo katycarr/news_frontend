@@ -1,25 +1,21 @@
-div.topics-container {
+div.sidebar {
   background-color: black;
   color:white;
   position:fixed;
-
-}
-
-div.sidebar {
   height:100%;
   width:250px;
-  overflow:scroll;
   top:0;
+  text-align: center;
 }
 
-div.topics-container h1 {
+div.sidebar h1 {
   margin-bottom:5px;
 }
-div.topics-container div.link {
+div.sidebar div.link {
   margin-bottom: 20px;
 }
 
-div.topics-container a {
+div.sidebar a {
   /* color: rgb(77, 0, 153); */
   color:rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
@@ -33,12 +29,12 @@ div.topics-container a {
   transition:.5s;
 }
 
-div.topics-container a:hover {
+div.sidebar a:hover {
   border-bottom: 1px dashed white;
   color:rgba(255, 255, 255, 0.9);
 }
 
-div.topics-container div.topic-list {
+div.sidebar div.topic-list {
   width:230px;
   margin:auto;
 }
@@ -50,11 +46,11 @@ div.topic-list li.topic {
   border-bottom: 1px solid grey;
 }
 
-div.topics-container div.length-filter {
+div.sidebar div.length-filter {
   text-align: center;
 }
 
-div.topics-container li.topic a.delete {
+div.sidebar li.topic a.delete {
   display:inline-block;
   position:absolute;
   right:20px;

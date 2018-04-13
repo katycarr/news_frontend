@@ -11,7 +11,7 @@ class Logout extends React.Component {
 
   render() {
     return(
-      <button onClick={this.logout}>Logout</button>
+      <a onClick={this.logout}>Logout</a>
     )
   }
 }

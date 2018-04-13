@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../stylesheets/Topics.css'
 import TopicListItem from '../TopicListItem'
 import DeleteTopic from '../buttons/DeleteTopic'
 
