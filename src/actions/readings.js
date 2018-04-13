@@ -42,7 +42,7 @@ export const getReadings = () => {
 
 }
 
-export const archiveReading = (readingId) => {
+export const archiveReading = (articleId) => {
   let options = {
     method: 'PATCH',
     headers: {
@@ -52,7 +52,7 @@ export const archiveReading = (readingId) => {
     }
   }
   return (dispatch) => {
-    fetch('http://localhost:3000/readings/'+readingId, options)
+    fetch('http://localhost:3000/readings/'+articleId, options)
       .then(res => res.json())
       .then(json => {
         console.log(json)

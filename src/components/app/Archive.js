@@ -5,13 +5,14 @@ import Page from '../Page'
 import withAuth from '../../hocs/withAuth'
 
 
-class ViewReadings extends React.Component {
+
+class Archive extends React.Component {
 
   render() {
-    if (this.props.loaded && this.props.readings.length > 0) {
+    if (this.props.loaded && this.props.archive.length > 0) {
       return(
         <Page>
-          <ArticleGroup articles={this.props.readings}/>
+          <ArticleGroup articles={this.props.archive}/>
         </Page>
       )
     } else if(!this.props.loaded) {
@@ -24,9 +25,9 @@ class ViewReadings extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    readings: state.readings.current,
+    archive: state.readings.archive,
     loaded: state.readings.loaded
   }
 }
 
-export default connect(mapStateToProps)(withAuth(ViewReadings))
+export default connect(mapStateToProps)(withAuth(Archive))

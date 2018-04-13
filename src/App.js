@@ -11,6 +11,7 @@ import Signup from './components/app/Signup'
 import Login from './components/app/Login'
 import Home from './components/app/Home'
 import FindTopics from './components/app/FindTopics'
+import Archive from './components/app/Archive'
 
 
 
@@ -30,6 +31,7 @@ class App extends Component {
         <Route path='/signup' render={() => <Signup />} />
         <Route path='/topics' render={() => <FindTopics />} />
         <Route path='/readinglist' render={() => <ViewReadings /> } />
+        <Route path='/archive' render={() => <Archive /> } />
       </div>
     );
   }

@@ -8,9 +8,9 @@ import {connect} from 'react-redux'
 class ArticleCard extends React.Component {
 
   whichButton = () => {
-    if (!this.props.reading) {
+    if (!this.props.reading && !this.props.archive) {
       return <AddToReading article={this.props.article} />
-    } else if (this.props.reading['read?']) {
+    } else if (this.props.archive) {
       return <div>read</div>
     } else {
       return <ArchiveReading reading={this.props.reading} />
@@ -32,7 +32,8 @@ class ArticleCard extends React.Component {
 function mapStateToProps(state, ownProps) {
 
     return {
-      reading: state.readings.all[ownProps.article.id]
+      reading: state.readings.current.find(article => article.id === ownProps.article.id),
+      archive: state.readings.archive.find(article => article.id === ownProps.article.id)
     }
 
 }
