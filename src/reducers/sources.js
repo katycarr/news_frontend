@@ -19,6 +19,15 @@ export function sources(state=initialState, action) {
       return {...state, checked: newChecked}
     case 'CHECK':
       return {...state, checked: [...state.checked, action.payload]}
+    case 'ADD_ARTICLES':
+      let unique = []
+      const sourceList = action.payload.map(article => article.source)
+      sourceList.forEach(source => {
+        if(!unique.includes(source) && !state.all.includes(source)) {
+          unique.push(source)
+        }
+      })
+      return {all: [...state.all, ...unique], checked: [...state.checked, ...unique]}
     default:
       return state
   }

@@ -9,6 +9,8 @@ export function articles(state=initialState, action) {
       return {...state, loaded: false}
     case 'LOAD_ARTICLES':
       return {all: action.payload, loaded: true}
+    case 'ADD_ARTICLES':
+      return {...state, all:[...state.all, ...action.payload]}
     default:
       return state
   }

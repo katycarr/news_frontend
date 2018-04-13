@@ -18,5 +18,21 @@ export const fetchArticles = () => {
         })
       })
   }
+}
 
+export const fetchMore = (currentCount) => {
+  return (dispatch) => {
+    fetch('http://localhost:3000/articles?start='+currentCount, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        dispatch({
+          type: 'ADD_ARTICLES',
+          payload: json ? json : []
+        })
+      })
+  }
 }

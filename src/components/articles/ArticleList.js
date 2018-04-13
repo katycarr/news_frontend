@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ArticleGroup from './ArticleGroup'
+import LoadMore from '../buttons/LoadMore'
 
 class ArticleList extends React.Component {
 
@@ -27,9 +28,10 @@ class ArticleList extends React.Component {
 
   render() {
     const filteredArticles = this.filterBySources(this.filterByTime(this.props.articles))
-
     return(
-        <ArticleGroup articles={filteredArticles} />
+        <ArticleGroup articles={filteredArticles}>
+          <LoadMore />
+        </ArticleGroup>
     )
   }
 }
