@@ -8,7 +8,7 @@ const Nav = (props) => {
     <div className="nav">
       <GetNew />
       <Link to="/">News</Link>
-      <Link to="/topics">My Topics</Link>
+      <Link to="/topics">Explore Topics</Link>
       <Link to='/readinglist'>Saved Articles</Link>
       <Link to='/archive'>Archive</Link>
       <Logout />

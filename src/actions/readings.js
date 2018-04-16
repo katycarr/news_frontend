@@ -55,7 +55,6 @@ export const archiveReading = (articleId) => {
     fetch('http://localhost:3000/readings/'+articleId, options)
       .then(res => res.json())
       .then(json => {
-        console.log(json)
         dispatch({
           type: 'ARCHIVE_READING',
           payload: json

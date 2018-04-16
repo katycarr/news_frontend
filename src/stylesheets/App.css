@@ -35,3 +35,10 @@ a:hover {
   cursor:pointer;
   font-weight: bold;
 }
+
+button.load-more {
+  display:block;
+  width:50%;
+  margin:auto;
+  margin-bottom: 40px;
+}

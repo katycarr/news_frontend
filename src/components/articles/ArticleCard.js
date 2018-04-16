@@ -30,7 +30,6 @@ class ArticleCard extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-
     return {
       reading: state.readings.current.find(article => article.id === ownProps.article.id),
       archive: state.readings.archive.find(article => article.id === ownProps.article.id)

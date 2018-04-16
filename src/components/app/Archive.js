@@ -9,17 +9,17 @@ import withAuth from '../../hocs/withAuth'
 class Archive extends React.Component {
 
   render() {
+    let pageContent = <div className='articles-container'><div>No stories saved!</div></div>
     if (this.props.loaded && this.props.archive.length > 0) {
-      return(
-        <Page>
-          <ArticleGroup articles={this.props.archive}/>
-        </Page>
-      )
+      pageContent = <ArticleGroup articles={this.props.archive}/>
     } else if(!this.props.loaded) {
-      return (<div className='articles-container'></div>)
-    } else {
-      return (<div className='articles-container'><div>No stories saved!</div></div>)
+      pageContent = <div className='articles-container'></div>
     }
+    return(
+      <Page>
+        {pageContent}
+      </Page>
+    )
   }
 }
 
