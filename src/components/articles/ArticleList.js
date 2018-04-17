@@ -7,11 +7,15 @@ class ArticleList extends React.Component {
 
   filterByTime = (articles) => {
     function toNum(string) {
-      return parseInt(string.split(' ')[0])
+      if (string.split(' ')[1] === 'seconds') {
+        return 0;
+      } else {
+        return parseInt(string.split(' ')[0], 10)
+      }
     }
     switch (this.props.readtime) {
       case 'long':
-        return articles.filter(article => toNum(article.reading_time) > 5 )
+        return articles.filter(article => toNum(article.reading_time) > 4 )
       case 'short':
         return articles.filter(article => toNum(article.reading_time) <= 5 )
       default:
