@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import SourceCheckbox from './SourceCheckbox'
+import CollabsibleMenu from './CollapsibleMenu'
 
 class FilterContainer extends React.Component {
   state = {
@@ -20,11 +21,9 @@ class FilterContainer extends React.Component {
     })
     return(
       <div className='source-filter'>
-        <p>Filter by source</p>
-        ( <a className='toggle-source' onClick={this.toggleVisibility}>{this.state.visible ? 'Hide List' : 'Show List'}</a> )
-
-          {this.state.visible ? <div className='source-box'>{options}</div> : null}
-
+        <CollabsibleMenu title='Sources'>
+          {options}
+        </CollabsibleMenu>
       </div>
     )
   }

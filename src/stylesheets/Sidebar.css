@@ -6,9 +6,10 @@ div.sidebar {
   width:250px;
   top:0;
   text-align: center;
+  overflow: scroll;
 }
 
-div.sidebar h1 {
+div.sidebar h1, div.dropdown h1 {
   margin-bottom:5px;
 }
 div.sidebar div.link {
@@ -34,12 +35,7 @@ div.sidebar a:hover {
   color:rgba(255, 255, 255, 0.9);
 }
 
-div.sidebar div.topic-list {
-  width:230px;
-  margin:auto;
-}
-
-div.topic-list li.topic {
+div.menu-content li.topic {
   list-style-type: none;
   text-align: left;
   padding:10px;
@@ -52,6 +48,7 @@ div.sidebar div.length-filter {
 
 div.sidebar li.topic a.delete {
   display:inline-block;
-  position:absolute;
-  right:20px;
+  /* position:absolute;
+  right:20px; */
+  float:right;
 }

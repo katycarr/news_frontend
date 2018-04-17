@@ -7,7 +7,6 @@ const FilterGroup = (props) => {
 
   return(
     <div className='filter-group'>
-      <h1>Filter Stories</h1>
       <LengthFilter />
       <FilterContainer />
     </div>

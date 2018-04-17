@@ -1,0 +1,12 @@
+li.topic.active {
+  background-color: white;
+  color:rgb(28,71,90);
+}
+
+li.topic.active:hover {
+  background-color: white;
+}
+
+li.topic.clickable {
+  cursor:pointer;
+}
