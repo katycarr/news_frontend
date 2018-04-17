@@ -6,6 +6,8 @@ div.articles-container {
 
 div.article {
   /* border-bottom: 1px solid lightgrey; */
+  position:relative;
+  min-height:220px;
 }
 
 img.article-img {
@@ -61,4 +63,24 @@ div.timestamp {
   color:grey;
   padding:3px;
   font-size: 0.8rem;
+}
+
+div.tone {
+  float:right;
+}
+
+div.tone.green {
+  color:green;
+}
+
+div.tone.red {
+  color:darkred;
+}
+
+div.tone.grey {
+  color:grey;
+}
+
+div.tone.hidden {
+  display:none;
 }

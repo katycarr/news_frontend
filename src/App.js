@@ -18,9 +18,19 @@ import Archive from './components/app/Archive'
 
 class App extends Component {
   componentDidMount = () => {
-    this.props.fetchTopics()
-    this.props.fetchArticles()
-    this.props.getReadings()
+    if(this.props.user) {
+      this.props.fetchTopics()
+      this.props.fetchArticles()
+      this.props.getReadings()
+    }
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    if(nextProps.user && nextProps.user !== this.props.user) {
+      this.props.fetchTopics()
+      this.props.fetchArticles()
+      this.props.getReadings()
+    }
   }
 
   render() {
