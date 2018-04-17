@@ -10,7 +10,7 @@ class ArchiveReading extends React.Component {
 
   render() {
     return(
-      <button onClick={this.handleClick}>Archive</button>
+      <button className='archive' onClick={this.handleClick}>-</button>
     )
   }
 }

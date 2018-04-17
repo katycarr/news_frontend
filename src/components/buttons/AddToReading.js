@@ -10,7 +10,7 @@ class AddToReading extends React.Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>Add to reading list</button>
+      <button className='add' onClick={this.handleClick}>+</button>
     )
   }
 }

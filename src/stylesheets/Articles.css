@@ -55,3 +55,10 @@ div.article-tags li.topic a {
   font-size:1rem;
   padding-left:3px;
 }
+
+div.timestamp {
+  float:right;
+  color:grey;
+  padding:3px;
+  font-size: 0.8rem;
+}

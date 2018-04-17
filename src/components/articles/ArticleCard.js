@@ -4,6 +4,7 @@ import ArticleTags from './ArticleTags'
 import DisplayArticle from './DisplayArticle'
 import ArchiveReading from '../buttons/ArchiveReading'
 import {connect} from 'react-redux'
+import '../../stylesheets/ReadingButton.css'
 
 class ArticleCard extends React.Component {
 
@@ -11,7 +12,7 @@ class ArticleCard extends React.Component {
     if (!this.props.reading && !this.props.archive) {
       return <AddToReading article={this.props.article} />
     } else if (this.props.archive) {
-      return <div>read</div>
+      return <button className='read'>x</button>
     } else {
       return <ArchiveReading reading={this.props.reading} />
     }
@@ -20,9 +21,9 @@ class ArticleCard extends React.Component {
   render() {
     const readingButton = this.whichButton()
     return(
-      <div>
+      <div className='article'>
+        <div className='reading-button'>{readingButton}</div>
         <DisplayArticle article={this.props.article}/>
-        {readingButton}
         <ArticleTags article={this.props.article} />
       </div>
     )
