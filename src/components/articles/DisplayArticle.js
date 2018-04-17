@@ -1,4 +1,7 @@
 import React from 'react'
+import TimeAgo from 'react-timeago'
+
+
 
 const DisplayArticle = (props) => {
 
@@ -11,7 +14,7 @@ const DisplayArticle = (props) => {
       <div className='article-content'>
         <a href={props.article.url}><h3>{props.article.title}</h3></a>
         <h5>{props.article.author} - {props.article.source}</h5>
-        <p className='timestamp'>{date.toDateString()} {date.toLocaleTimeString()}</p>
+        <p className='timestamp'><TimeAgo date={date}/></p>
         <p>Reading Time: {props.article.reading_time} | Tone: {props.article.emotion}</p>
         <p>{props.article.description}</p>
       </div>

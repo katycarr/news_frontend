@@ -7,7 +7,6 @@ const initialState = {
 export function readings(state=initialState, action) {
   switch(action.type) {
     case 'CREATE_READING':
-      let newReadings = [...state.current, action.payload]
       return {...state, current: [...state.current, action.payload]}
     case 'BEGIN_READINGS_LOAD':
       return {...state, loaded:false}

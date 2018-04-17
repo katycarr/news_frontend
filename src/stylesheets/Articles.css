@@ -1,18 +1,20 @@
 div.articles-container {
   margin-left: 270px;
+  margin-top: 40px;
+  margin-right: 20px;
 }
 
 div.article {
   /* border-bottom: 1px solid lightgrey; */
-
 }
 
 img.article-img {
   float:left;
-  margin:10px;
+  margin:20px;
   margin-top:0;
+  margin-left: 0;
   max-width:200px;
-  border:1px solid black;
+  max-height: 200px;
 }
 
 div.article-content {
