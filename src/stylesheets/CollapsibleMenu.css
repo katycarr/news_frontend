@@ -6,6 +6,10 @@ h1.sb-title {
   -webkit-transition:.5s;
   transition:.5s;
   text-align: left;
+  padding:5px;
+  margin:0;
+  font-size: 1.5rem;
+  line-height: 3rem;
 }
 
 h1.sb-title:hover {
@@ -18,13 +22,14 @@ span.arrow {
   font-weight: normal;
   font-size: 1rem;
   vertical-align:sub;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
 }
 
 div.menu-content {
   max-height:0;
   overflow:hidden;
   background-color: rgb(28,71,90);
+  margin:0;
 }
 
 div.menu-content.show {
