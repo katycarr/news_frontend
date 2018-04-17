@@ -25,9 +25,8 @@ const DisplayArticle = (props) => {
 
   return(
     <div >
-
       <div className='timestamp'><TimeAgo date={date} formatter={formatter}/></div>
-      <div className={toneStyle()}>{String.fromCharCode(9673)}</div>
+      <div data-tip={props.article.emotion+' tone'} className={toneStyle()}>{String.fromCharCode(9673)}</div>
       {props.article.img_url ?<img src={props.article.img_url} alt={props.article.title} className='article-img'/>
       : null }
       <div className='article-content'>

@@ -5,6 +5,7 @@ import DisplayArticle from './DisplayArticle'
 import ArchiveReading from '../buttons/ArchiveReading'
 import {connect} from 'react-redux'
 import '../../stylesheets/ReadingButton.css'
+import ReactTooltip from 'react-tooltip'
 
 class ArticleCard extends React.Component {
 
@@ -22,6 +23,7 @@ class ArticleCard extends React.Component {
     const readingButton = this.whichButton()
     return(
       <div className='article'>
+        <ReactTooltip type='info'/>
         <div className='reading-button'>{readingButton}</div>
         <DisplayArticle article={this.props.article}/>
         <ArticleTags article={this.props.article} />

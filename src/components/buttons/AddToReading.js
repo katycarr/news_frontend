@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createReading } from '../../actions/readings'
 
+
 class AddToReading extends React.Component {
 
   handleClick = () => {
@@ -10,7 +11,7 @@ class AddToReading extends React.Component {
 
   render() {
     return (
-      <button className='add' onClick={this.handleClick}>+</button>
+      <button className='add' data-tip='add to reading list' onClick={this.handleClick}>+</button>
     )
   }
 }
