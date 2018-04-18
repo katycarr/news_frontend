@@ -14,7 +14,7 @@ div.nav div.inner-nav {
 div.nav a {
   position:relative;
   padding:5px 10px;
-  margin:1px;
+  margin:2px;
   box-shadow: 1px 1px 1px black;
   background-color: rgb(28,70,115);
   color:white;
