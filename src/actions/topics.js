@@ -52,9 +52,14 @@ export const createTopic = (topic) => {
     fetch('http://localhost:3000/topics', options)
       .then(res => res.json())
       .then(json => {
+        console.log(json)
         dispatch({
           type: 'CREATE_USER_TOPIC',
-          payload: json
+          payload: json.topic
+        })
+        dispatch({
+          type: 'LOAD_ARTICLES',
+          payload: json.articles
         })
       })
   }
@@ -71,12 +76,17 @@ export const deleteUserTopic = (topicId) => {
     }
   }
   return (dispatch) => {
+    dispatch({
+      type: 'DELETE_USER_TOPIC',
+      payload: topicId
+    })
+
     fetch('http://localhost:3000/topics/'+topicId, options)
       .then(res => res.json())
-      .then(() => {
+      .then(json => {
         dispatch({
-          type: 'DELETE_USER_TOPIC',
-          payload: topicId
+          type:'LOAD_ARTICLES',
+          payload: json
         })
       })
   }

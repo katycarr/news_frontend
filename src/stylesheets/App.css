@@ -1,28 +1,24 @@
 div.home-container {
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
 
-div.nav {
-  position:relative;
-  top:5px;
+div.page {
+  position:absolute;
+  left:0;
   right:0;
-  text-align:right;
-  margin-bottom: 30px;
+  top:0;
+  bottom:0;
 }
 
-div.nav a {
-  padding:3px;
-  margin:10px;
-}
-
-div.nav a:hover {
-  border-bottom: 1px dashed rgb(173, 70, 162);
-  font-weight: normal;
-}
 
 a {
   text-decoration: none;
-  color: rgb(173, 70, 162);
+  /* color: rgb(173, 70, 162); */
+  /* color: rgb(147, 64, 153); */
+  color: #e386a9;
   -o-transition:.5s;
   -ms-transition:.5s;
   -moz-transition:.5s;

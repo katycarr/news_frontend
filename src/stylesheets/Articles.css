@@ -1,13 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat:600');
+
 div.articles-container {
-  margin-left: 270px;
+  position: absolute;
+  left:250px;
   margin-top: 40px;
-  margin-right: 20px;
+
 }
 
 div.article {
-  /* border-bottom: 1px solid lightgrey; */
+  width:80%;
+  margin:auto;
   position:relative;
-  min-height:220px;
+  min-height:205px;
+}
+
+div.line {
+  border-top: 1px solid lightgrey;
+  width:40%;
+  position: relative;
+  margin: 70px auto;
 }
 
 img.article-img {
@@ -21,12 +32,26 @@ img.article-img {
 
 div.article-content {
   text-align:left;
+  font-family: 'Crimson Text', serif;
+}
+
+div.article-content p {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 div.article-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
   margin-bottom:5px;
   display:inline;
-  border-bottom: 1px dashed rgba(173, 70, 162, 0.5);
+  color:black;
+  transition: all 0.5s;
+  /* border-bottom: 1px dashed rgba(173, 70, 162, 0.5); */
+}
+
+div.article-content h3:hover {
+  color: #e386a9;
 }
 
 div.article-content h5 {
@@ -41,7 +66,6 @@ div.article-content p.timestamp {
 
 div.article-tags {
   list-style-type:none;
-  margin-bottom: 50px;
 }
 
 div.article-tags li.topic {
@@ -56,31 +80,4 @@ div.article-tags li.topic a {
   font-weight:bold;
   font-size:1rem;
   padding-left:3px;
-}
-
-div.timestamp {
-  float:right;
-  color:grey;
-  padding:3px;
-  font-size: 0.8rem;
-}
-
-div.tone {
-  float:right;
-}
-
-div.tone.green {
-  color:green;
-}
-
-div.tone.red {
-  color:darkred;
-}
-
-div.tone.grey {
-  color:grey;
-}
-
-div.tone.hidden {
-  display:none;
 }

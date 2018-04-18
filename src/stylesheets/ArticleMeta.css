@@ -1,0 +1,41 @@
+div.meta {
+  float:right;
+  text-align: center;
+  margin-left: 50px;
+  height:100%;
+  padding: 5px;
+  /* border-left:1px solid lightgrey; */
+  min-height: 250px;
+  /* background-color: lightgrey; */
+}
+
+div.meta > * {
+  margin-bottom:10px;
+}
+div.timestamp {
+  /* float:right; */
+  color:grey;
+  padding:3px;
+  font-size: 0.8rem;
+  padding:0;
+}
+
+div.tone {
+  /* float:right; */
+}
+
+div.tone.green {
+  color:green;
+}
+
+div.tone.red {
+  color:darkred;
+}
+
+div.tone.grey {
+  color:grey;
+}
+
+div.tone.hidden {
+  display:none;
+}

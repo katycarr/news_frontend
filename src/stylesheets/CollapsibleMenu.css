@@ -13,7 +13,7 @@ h1.sb-title {
 }
 
 h1.sb-title:hover {
-  background-color: rgb(28,71,90);
+  background-color: rgba(28,70,115,0.8);
   cursor:pointer;
 }
 
@@ -28,8 +28,9 @@ span.arrow {
 div.menu-content {
   max-height:0;
   overflow:hidden;
-  background-color: rgb(28,71,90);
+  background-color: rgba(28,70,115,0.8);
   margin:0;
+  padding-left: 10px;
 }
 
 div.menu-content.show {

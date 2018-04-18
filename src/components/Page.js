@@ -5,7 +5,7 @@ import FilterGroup from './sidebar/FilterGroup'
 
 const Page = (props) => {
   return(
-    <div>
+    <div className='page'>
       <Nav />
       <Sidebar>
         {props.withFilters ? <FilterGroup /> : null}

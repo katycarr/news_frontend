@@ -17,7 +17,7 @@ function getUniqueSources(articles, state) {
 export function sources(state=initialState, action) {
   switch(action.type) {
     case 'LOAD_ARTICLES':
-      const articleSources = getUniqueSources(action.payload, state)
+      const articleSources = getUniqueSources(action.payload, {all:[]})
       return {all: articleSources, checked: articleSources}
     case 'UNCHECK':
       let newChecked = state.checked.filter(src => src !== action.payload)

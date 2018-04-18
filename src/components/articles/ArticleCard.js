@@ -24,8 +24,9 @@ class ArticleCard extends React.Component {
     return(
       <div className='article'>
         <ReactTooltip type='info'/>
-        <div className='reading-button'>{readingButton}</div>
-        <DisplayArticle article={this.props.article}/>
+        <DisplayArticle article={this.props.article}>
+          <div className='reading-button'>{readingButton}</div>
+        </DisplayArticle>
         <ArticleTags article={this.props.article} />
       </div>
     )

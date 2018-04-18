@@ -1,38 +1,19 @@
 import React from 'react'
-import TimeAgo from 'react-timeago'
-import shortString from 'react-timeago/lib/language-strings/en-short'
-import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-
-const formatter = buildFormatter(shortString)
-
+import ArticleMeta from './ArticleMeta'
 
 
 const DisplayArticle = (props) => {
 
-  const date = new Date(props.article.published_at)
-  const toneStyle = () => {
-    switch (props.article.emotion) {
-      case 'positive':
-        return 'tone green'
-      case 'negative':
-        return 'tone red'
-      case 'neutral':
-        return 'tone grey'
-      default:
-        return 'tone hidden'
-    }
-  }
-
   return(
     <div >
-      <div className='timestamp'><TimeAgo date={date} formatter={formatter}/></div>
-      <div data-tip={props.article.emotion+' tone'} className={toneStyle()}>{String.fromCharCode(9673)}</div>
+      <ArticleMeta date={new Date(props.article.published_at)} tone={props.article.emotion} readingtime={props.article.reading_time}>
+        {props.children}
+      </ArticleMeta>
       {props.article.img_url ?<img src={props.article.img_url} alt={props.article.title} className='article-img'/>
       : null }
       <div className='article-content'>
-        <a href={props.article.url}><h3>{props.article.title}</h3></a>
-        <h5>{props.article.author} - {props.article.source}</h5>
-        <p>Reading Time: {props.article.reading_time}</p>
+        <a href={props.article.url} target="_blank"><h3>{props.article.title}</h3></a>
+        <p>{props.article.author} - {props.article.source}</p>
         <p>{props.article.description}</p>
       </div>
     </div>

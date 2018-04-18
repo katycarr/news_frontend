@@ -4,7 +4,7 @@ import ArticleCard from './ArticleCard'
 const ArticleGroup = (props) => {
 
   const articleCards = props.articles.map(article => {
-    return <ArticleCard key={article.id} article={article}/>
+    return <div key={article.id} ><ArticleCard article={article}/><div className='line'></div></div>
   })
   return(
     <div className='articles-container'>
