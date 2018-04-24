@@ -23,7 +23,7 @@ export const searchTopics = input => {
     },
   }
   return (dispatch) => {
-    fetch('http://lookup.dbpedia.org/api/search/KeywordSearch?QueryString='+input, options)
+    fetch('https://lookup.dbpedia.org/api/search/KeywordSearch?QueryString='+input, options)
       .then(res => res.json())
       .then(json => {
         dispatch({
