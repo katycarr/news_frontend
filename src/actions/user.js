@@ -9,7 +9,7 @@ export const createUser = ({username, password, password_confirmation}, history)
       },
       body: JSON.stringify({user: {username, password, password_confirmation}})
     }
-    fetch('http://localhost:3000/users', options)
+    fetch('https://api-frontpage.herokuapp.com/users', options)
       .then(res => res.json())
       .then(json => {
         if(json.errors) {
@@ -36,7 +36,7 @@ export const loginUser = ({username, password}, history) => {
       },
       body: JSON.stringify({username, password})
     }
-    fetch('http://localhost:3000/login', options)
+    fetch('https://api-frontpage.herokuapp.com/login', options)
       .then(res => res.json())
       .then(json => {
         if(json.errors) {
@@ -62,7 +62,7 @@ export const logout = () => {
 export const getUser = () => {
   const token = localStorage.getItem('token')
   return (dispatch) => {
-    fetch('http://localhost:3000/get_user', {
+    fetch('https://api-frontpage.herokuapp.com/get_user', {
       headers: {
         "Authorization": token
       }

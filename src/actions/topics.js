@@ -2,7 +2,7 @@
 export const fetchTopics = () => {
 
   return (dispatch) => {
-    fetch('http://localhost:3000/topics', {headers: {
+    fetch('https://api-frontpage.herokuapp.com/topics', {headers: {
       "Authorization": localStorage.getItem('token')
     }})
       .then(res => res.json())
@@ -17,7 +17,7 @@ export const fetchTopics = () => {
 
 export const searchTopics = input => {
   return (dispatch) => {
-    fetch('http://localhost:3000/topics/search?q='+input)
+    fetch('https://api-frontpage.herokuapp.com/topics/search?q='+input)
       .then(res => res.json())
       .then(json => {
         console.log(json)
@@ -44,7 +44,7 @@ export const createTopic = (topic) => {
     }})
   }
   return (dispatch) => {
-    fetch('http://localhost:3000/topics', options)
+    fetch('https://api-frontpage.herokuapp.com/topics', options)
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -75,7 +75,7 @@ export const deleteUserTopic = (topicId) => {
       payload: topicId
     })
 
-    fetch('http://localhost:3000/topics/'+topicId, options)
+    fetch('https://api-frontpage.herokuapp.com/topics/'+topicId, options)
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -88,7 +88,7 @@ export const deleteUserTopic = (topicId) => {
 
 export const getPopularTopics = () => {
   return (dispatch) => {
-    fetch('http://localhost:3000/topics?pop=true')
+    fetch('https://api-frontpage.herokuapp.com/topics?pop=true')
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -101,7 +101,7 @@ export const getPopularTopics = () => {
 
 export const getArticleTopics = (article_id) => {
   return (dispatch) => {
-    fetch('http://localhost:3000/topics?article_id='+article_id,
+    fetch('https://api-frontpage.herokuapp.com/topics?article_id='+article_id,
         {headers: {
           "Authorization": localStorage.getItem('token')
         }})
