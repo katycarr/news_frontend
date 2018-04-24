@@ -2,7 +2,7 @@
 export const fetchTopics = () => {
 
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/topics', {headers: {
+    fetch('http://localhost:3000/topics', {headers: {
       "Authorization": localStorage.getItem('token')
     }})
       .then(res => res.json())
@@ -16,19 +16,14 @@ export const fetchTopics = () => {
 }
 
 export const searchTopics = input => {
-  let options = {
-    method: 'GET',
-    headers: {
-      Accept:'application/json'
-    },
-  }
   return (dispatch) => {
-    fetch('//lookup.dbpedia.org/api/search/KeywordSearch?QueryString='+input, options)
+    fetch('http://localhost:3000/topics/search?q='+input)
       .then(res => res.json())
       .then(json => {
+        console.log(json)
         dispatch({
           type: 'SEARCH_TOPICS',
-          payload: json.results
+          payload: json
         })
       })
   }
@@ -49,7 +44,7 @@ export const createTopic = (topic) => {
     }})
   }
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/topics', options)
+    fetch('http://localhost:3000/topics', options)
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -80,7 +75,7 @@ export const deleteUserTopic = (topicId) => {
       payload: topicId
     })
 
-    fetch('https://api-frontpage.herokuapp.com/topics/'+topicId, options)
+    fetch('http://localhost:3000/topics/'+topicId, options)
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -93,7 +88,7 @@ export const deleteUserTopic = (topicId) => {
 
 export const getPopularTopics = () => {
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/topics?pop=true')
+    fetch('http://localhost:3000/topics?pop=true')
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -106,7 +101,7 @@ export const getPopularTopics = () => {
 
 export const getArticleTopics = (article_id) => {
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/topics?article_id='+article_id,
+    fetch('http://localhost:3000/topics?article_id='+article_id,
         {headers: {
           "Authorization": localStorage.getItem('token')
         }})

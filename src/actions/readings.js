@@ -10,7 +10,7 @@ export const createReading = (articleId) => {
     body: JSON.stringify({articleId: articleId})
   }
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/readings', options)
+    fetch('http://localhost:3000/readings', options)
       .then(res => res.json())
       .then(json => {
         dispatch({
@@ -26,7 +26,7 @@ export const getReadings = () => {
     dispatch({
       type: 'BEGIN_READINGS_LOAD'
     })
-    fetch('https://api-frontpage.herokuapp.com/readings', {
+    fetch('http://localhost:3000/readings', {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
@@ -52,7 +52,7 @@ export const archiveReading = (articleId) => {
     }
   }
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/readings/'+articleId, options)
+    fetch('http://localhost:3000/readings/'+articleId, options)
       .then(res => res.json())
       .then(json => {
         dispatch({
