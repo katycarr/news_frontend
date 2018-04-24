@@ -52,7 +52,6 @@ export const createTopic = (topic) => {
     fetch('http://localhost:3000/topics', options)
       .then(res => res.json())
       .then(json => {
-        console.log(json)
         dispatch({
           type: 'CREATE_USER_TOPIC',
           payload: json.topic

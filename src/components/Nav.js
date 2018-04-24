@@ -4,6 +4,8 @@ import Logout from './buttons/Logout'
 import GetNew from './buttons/GetNew'
 import '../stylesheets/Nav.css'
 
+
+
 const Nav = (props) => {
   return(
     <div className="nav">

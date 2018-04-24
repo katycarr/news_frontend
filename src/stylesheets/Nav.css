@@ -17,6 +17,7 @@ div.nav a {
   margin:2px;
   box-shadow: 1px 1px 1px black;
   background-color: rgb(28,70,115);
+  border: 2px solid rgb(106,167,232);
   color:white;
   padding-top: 25px;
   top:0;
@@ -29,4 +30,8 @@ div.nav a:hover {
   color:white;
   background-color: rgba(28,70,115,0.8);
   font-weight: normal;
+}
+
+img.icon {
+  height:10px;
 }

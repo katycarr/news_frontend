@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
   render() {
     return(
       <div className='sidebar'>
-        <h1 className='main'>News</h1>
+        <h1 className='main'>FrontPage</h1>
         <UserTopicsList topics={this.props.topics}>
           <div className='link'>( <Link to='/topics'>edit</Link> )</div>
         </UserTopicsList>

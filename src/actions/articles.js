@@ -48,7 +48,7 @@ export const getNewArticles = () => {
       .then(res => res.json())
       .then(json => {
         dispatch({
-          type: 'NEW_ARTICLES',
+          type: 'LOAD_ARTICLES',
           payload: json ? json : []
         })
       })
