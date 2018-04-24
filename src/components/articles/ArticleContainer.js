@@ -12,7 +12,7 @@ class ArticleContainer extends React.Component {
       return(
         <ArticleList />)
     } else if(!this.props.loaded) {
-      return (<div className='articles-container'><div className="loader"></div></div>)
+      return (<div className='load-container'><div className="loader"></div></div>)
     } else {
       return (<div className='articles-container'><div>No stories yet!</div></div>)
     }
