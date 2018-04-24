@@ -5,7 +5,7 @@ export const fetchArticles = () => {
     dispatch({
       type: 'BEGIN_LOAD'
     })
-    fetch('http://localhost:3000/articles', {
+    fetch('https://api-frontpage.herokuapp.com/articles', {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
@@ -22,7 +22,7 @@ export const fetchArticles = () => {
 
 export const fetchMore = (currentCount) => {
   return (dispatch) => {
-    fetch('http://localhost:3000/articles?start='+currentCount, {
+    fetch('https://api-frontpage.herokuapp.com/articles?start='+currentCount, {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
@@ -40,7 +40,7 @@ export const fetchMore = (currentCount) => {
 export const getNewArticles = () => {
 
   return (dispatch) => {
-    fetch('http://localhost:3000/new_articles', {
+    fetch('https://api-frontpage.herokuapp.com/new_articles', {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
