@@ -8,7 +8,8 @@ h1.sb-title {
   text-align: left;
   padding:5px;
   margin:0 !important;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
   line-height: 3rem;
 }
 
@@ -39,10 +40,6 @@ div.menu-content.show {
 }
 
 div.menu-content li {
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
   transition:.5s;
 }
 

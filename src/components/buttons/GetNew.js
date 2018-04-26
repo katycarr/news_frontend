@@ -10,7 +10,10 @@ class GetNew extends React.Component {
 
   render() {
     return(
-      <button onClick={this.handleClick}>Get New</button>
+      <div className='getnew-container'>
+        <button className='get-new' onClick={this.handleClick}>Get New</button>
+        <p> (may take a moment) </p>
+      </div>
     )
   }
 }

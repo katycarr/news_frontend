@@ -42,6 +42,7 @@ div.menu-content li.topic {
   text-align: left;
   padding:10px;
   border-bottom: 1px solid grey;
+  font-size: 0.9rem;
 }
 
 div.sidebar div.length-filter {

@@ -13,10 +13,10 @@ class TopicCard extends React.Component {
   render() {
     const topic = this.props.data
     return(
-      <div>
+      <div className='topic-result'>
         <h1>{topic.label}</h1>
         <p>{topic.description}</p>
-        <button onClick={this.handleClick}>Add to topics</button>
+        <a onClick={this.handleClick}>Add to topics</a>
       </div>
     )
   }
