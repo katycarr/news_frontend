@@ -16,7 +16,7 @@ function getUniqueSources(articles, state) {
 
 export function sources(state=initialState, action) {
   switch(action.type) {
-    case 'LOAD_ARTICLES':
+    case 'FETCH_ARTICLES_DONE':
       const articleSources = getUniqueSources(action.payload, {all:[]})
       return {all: articleSources, checked: articleSources}
     case 'UNCHECK':
@@ -25,7 +25,7 @@ export function sources(state=initialState, action) {
     case 'CHECK':
       return {...state, checked: [...state.checked, action.payload]}
     case 'NEW_ARTICLES':
-    case 'ADD_ARTICLES':
+    case 'ADD_ARTICLES_DONE':
       const sourceList = getUniqueSources(action.payload, state)
       return {all: [...state.all, ...sourceList], checked: [...state.checked, ...sourceList]}
     default:

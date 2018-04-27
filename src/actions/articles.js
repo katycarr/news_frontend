@@ -1,56 +1,13 @@
+import actionCreator from './actionCreator'
 
-export const fetchArticles = () => {
+const authHeader = { headers: {
+  "Authorization": localStorage.getItem('token')
+}}
 
-  return (dispatch) => {
-    dispatch({
-      type: 'BEGIN_LOAD'
-    })
-    fetch('https://api-frontpage.herokuapp.com/articles', {
-      headers: {
-        "Authorization": localStorage.getItem('token')
-      }
-    })
-      .then(res => res.json())
-      .then(json => {
-        dispatch({
-          type: 'LOAD_ARTICLES',
-          payload: json ? json : []
-        })
-      })
-  }
+export const fetchArticles = actionCreator('FETCH_ARTICLES', '/articles', authHeader)
+
+export function fetchMore(currentCount)  {
+   return (actionCreator('ADD_ARTICLES', '/articles?start='+currentCount, authHeader))()
 }
 
-export const fetchMore = (currentCount) => {
-  return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/articles?start='+currentCount, {
-      headers: {
-        "Authorization": localStorage.getItem('token')
-      }
-    })
-      .then(res => res.json())
-      .then(json => {
-        dispatch({
-          type: 'ADD_ARTICLES',
-          payload: json ? json : []
-        })
-      })
-  }
-}
-
-export const getNewArticles = () => {
-
-  return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/new_articles', {
-      headers: {
-        "Authorization": localStorage.getItem('token')
-      }
-    })
-      .then(res => res.json())
-      .then(json => {
-        dispatch({
-          type: 'LOAD_ARTICLES',
-          payload: json ? json : []
-        })
-      })
-  }
-}
+export const getNewArticles = actionCreator('FETCH_ARTICLES','/new_articles', authHeader)

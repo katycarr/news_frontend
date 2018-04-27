@@ -7,6 +7,7 @@ const ArticleGroup = (props) => {
     return <div key={article.id} ><ArticleCard article={article}/><div className='line'></div></div>
   })
   return(
+
     <div className='articles-container'>
       {articleCards}
       {props.children}

@@ -6,13 +6,13 @@ const initialState = {
 
 export function readings(state=initialState, action) {
   switch(action.type) {
-    case 'CREATE_READING':
+    case 'CREATE_READING_DONE':
       return {...state, current: [...state.current, action.payload]}
-    case 'BEGIN_READINGS_LOAD':
+    case 'FETCH_READINGS_START':
       return {...state, loaded:false}
-    case 'LOAD_READINGS':
+    case 'FETCH_READINGS_DONE':
       return {current: action.payload.reading_list, archive: action.payload.archive, loaded:true}
-    case 'ARCHIVE_READING':
+    case 'ARCHIVE_READING_DONE':
       const newCurrent = state.current.filter(reading => reading.id !== action.payload.id)
       return {...state, current: newCurrent, archive: [...state.archive, action.payload]}
     default:

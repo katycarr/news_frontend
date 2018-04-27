@@ -1,46 +1,23 @@
+import actionCreator from './actionCreator'
+
 export const createReading = (articleId) => {
-  const token = localStorage.getItem('token')
   let options = {
     method: 'POST',
     headers: {
       'Content-Type':'application/json',
       Accept:'application/json',
-      "Authorization": token
+      "Authorization": localStorage.getItem('token')
     },
     body: JSON.stringify({articleId: articleId})
   }
-  return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/readings', options)
-      .then(res => res.json())
-      .then(json => {
-        dispatch({
-          type: 'CREATE_READING',
-          payload: json
-        })
-      })
-  }
+  return (actionCreator('CREATE_READING', '/readings', options))()
 }
 
-export const getReadings = () => {
-  return (dispatch) => {
-    dispatch({
-      type: 'BEGIN_READINGS_LOAD'
-    })
-    fetch('https://api-frontpage.herokuapp.com/readings', {
-      headers: {
-        "Authorization": localStorage.getItem('token')
-      }
-    })
-      .then(res => res.json())
-      .then(json => {
-        dispatch({
-          type: 'LOAD_READINGS',
-          payload: json ? json : []
-        })
-      })
+export const getReadings = actionCreator('FETCH_READINGS', '/readings', {
+  headers: {
+    "Authorization": localStorage.getItem('token')
   }
-
-}
+})
 
 export const archiveReading = (articleId) => {
   let options = {
@@ -51,14 +28,6 @@ export const archiveReading = (articleId) => {
       "Authorization": localStorage.getItem('token')
     }
   }
-  return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/readings/'+articleId, options)
-      .then(res => res.json())
-      .then(json => {
-        dispatch({
-          type: 'ARCHIVE_READING',
-          payload: json
-        })
-      })
-  }
+  return (actionCreator('ARCHIVE_READING', '/readings/'+articleId, options))()
+
 }

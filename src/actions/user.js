@@ -1,3 +1,5 @@
+import { baseUrl } from './actionCreator'
+
 export const createUser = ({username, password, password_confirmation}, history) => {
 
   return (dispatch) => {
@@ -9,7 +11,7 @@ export const createUser = ({username, password, password_confirmation}, history)
       },
       body: JSON.stringify({user: {username, password, password_confirmation}})
     }
-    fetch('https://api-frontpage.herokuapp.com/users', options)
+    fetch(baseUrl+'/users', options)
       .then(res => res.json())
       .then(json => {
         if(json.errors) {
@@ -36,7 +38,7 @@ export const loginUser = ({username, password}, history) => {
       },
       body: JSON.stringify({username, password})
     }
-    fetch('https://api-frontpage.herokuapp.com/login', options)
+    fetch(baseUrl+'/login', options)
       .then(res => res.json())
       .then(json => {
         if(json.errors) {
@@ -60,11 +62,10 @@ export const logout = () => {
 }
 
 export const getUser = () => {
-  const token = localStorage.getItem('token')
   return (dispatch) => {
-    fetch('https://api-frontpage.herokuapp.com/get_user', {
+    fetch(baseUrl+'/get_user', {
       headers: {
-        "Authorization": token
+        "Authorization": localStorage.getItem('token')
       }
     })
     .then(res => res.json())
