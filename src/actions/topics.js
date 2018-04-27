@@ -20,7 +20,6 @@ export const searchTopics = input => {
     fetch('https://api-frontpage.herokuapp.com/topics/search?q='+input)
       .then(res => res.json())
       .then(json => {
-        console.log(json)
         dispatch({
           type: 'SEARCH_TOPICS',
           payload: json

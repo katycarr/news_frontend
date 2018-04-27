@@ -1,7 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {getUser} from '../actions/user'
+import {getUser} from '../../actions/user'
 
 function withAuth(WrappedComponent) {
   class AuthComponent extends React.Component {

@@ -6,10 +6,10 @@ import {Route, withRouter} from 'react-router-dom'
 import {fetchTopics} from './actions/topics'
 import {fetchArticles} from './actions/articles'
 import {getReadings} from './actions/readings'
-import ViewReadings from './components/app/ViewReadings'
-import Signup from './components/app/Signup'
-import Login from './components/app/Login'
-import Home from './components/app/Home'
+import ReadingsScreen from './components/screens/Readings'
+import SignupScreen from './components/screens/Signup'
+import LoginScreen from './components/screens/Login'
+import HomeScreen from './components/screens/Home'
 import FindTopics from './components/app/FindTopics'
 import Archive from './components/app/Archive'
 
@@ -17,40 +17,40 @@ import Archive from './components/app/Archive'
 
 
 class App extends Component {
-  componentDidMount = () => {
-    if(this.props.user) {
-      this.props.fetchTopics()
-      this.props.fetchArticles()
-      this.props.getReadings()
-    }
-  }
-
-  componentWillReceiveProps = (nextProps) => {
-    if(nextProps.user && nextProps.user !== this.props.user) {
-      this.props.fetchTopics()
-      this.props.fetchArticles()
-      this.props.getReadings()
-    }
-  }
+  // componentDidMount = () => {
+  //   if(this.props.user) {
+  //     this.props.fetchTopics()
+  //     this.props.fetchArticles()
+  //     this.props.getReadings()
+  //   }
+  // }
+  //
+  // componentWillReceiveProps = (nextProps) => {
+  //   if(nextProps.user && nextProps.user !== this.props.user) {
+  //     this.props.fetchTopics()
+  //     this.props.fetchArticles()
+  //     this.props.getReadings()
+  //   }
+  // }
 
   render() {
     return (
       <div className="App">
-        <Route exact path='/' render={() => <Home />} />
-        <Route path='/login' render={() => <Login />} />
-        <Route path='/signup' render={() => <Signup />} />
+        <Route exact path='/' render={() => <HomeScreen />} />
+        <Route path='/login' render={() => <LoginScreen />} />
+        <Route path='/signup' render={() => <SignupScreen />} />
         <Route path='/topics' render={() => <FindTopics />} />
-        <Route path='/readinglist' render={() => <ViewReadings /> } />
+        <Route path='/readinglist' render={() => <ReadingsScreen /> } />
         <Route path='/archive' render={() => <Archive /> } />
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.authentication.user
-  }
-}
+// function mapStateToProps(state) {
+//   return {
+//     user: state.authentication.user
+//   }
+// }
 
-export default withRouter(connect(mapStateToProps, {getUser, fetchTopics, fetchArticles, getReadings})(App));
+export default withRouter(connect(null, {getUser, fetchTopics, fetchArticles, getReadings})(App));

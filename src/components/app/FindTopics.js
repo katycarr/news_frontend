@@ -6,6 +6,7 @@ import PopularTopics from '../topics/PopularTopics'
 import Page from '../Page'
 import '../../stylesheets/Popular.css'
 import '../../stylesheets/FindTopics.css'
+import withAuth from '../hocs/withAuth'
 
 class FindTopicsContainer extends React.Component {
   state = {
@@ -52,4 +53,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {searchTopics})(FindTopicsContainer)
+export default connect(mapStateToProps, {searchTopics})(withAuth(FindTopicsContainer))

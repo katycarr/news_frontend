@@ -3,9 +3,11 @@ import Nav from './Nav'
 import Sidebar from './sidebar/Sidebar'
 import FilterGroup from './sidebar/FilterGroup'
 import GetNew from './buttons/GetNew'
+import withTopics from './hocs/withTopics'
 
 const Page = (props) => {
   return(
+
     <div className='page'>
       <Nav />
       <Sidebar>
@@ -17,4 +19,4 @@ const Page = (props) => {
   )
 }
 
-export default Page
+export default withTopics(Page)

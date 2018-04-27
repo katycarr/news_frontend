@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ArticleList from './ArticleList'
+import withArticles from '../hocs/withArticles'
+import withReadings from '../hocs/withReadings'
 import '../../stylesheets/Loader.css'
 import '../../stylesheets/Articles.css'
 
@@ -26,4 +28,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {})(ArticleContainer)
+export default withReadings(withArticles(connect(mapStateToProps, {})(ArticleContainer)))
