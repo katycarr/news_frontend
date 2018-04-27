@@ -28,6 +28,14 @@ export const searchTopics = input => {
   }
 }
 
+export const clearTopicsSearch = () => {
+  return (dispatch) => {
+    dispatch({
+      type: 'CLEAR_TOPICS_SEARCH'
+    })
+  }
+}
+
 export const createTopic = (topic) => {
   const token = localStorage.getItem('token')
   let options = {

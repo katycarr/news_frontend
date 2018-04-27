@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import ArticleGroup from '../articles/ArticleGroup'
 import Page from '../Page'
 import withReadings from '../hocs/withReadings'
+import withAuth from '../hocs/withAuth'
+import { compose } from 'redux'
 
 
 class ReadingsScreen extends React.Component {
 
   render() {
-    console.log(this.props)
     let pageContent = <div className='articles-container'><div>No stories saved!</div></div>
     if (this.props.loaded && this.props.readings.length > 0) {
       pageContent = <ArticleGroup articles={this.props.readings}/>
@@ -30,4 +31,6 @@ function mapStateToProps(state) {
   }
 }
 
-export default withReadings(connect(mapStateToProps)(ReadingsScreen))
+
+
+export default compose(withAuth, withReadings, connect(mapStateToProps))(ReadingsScreen)

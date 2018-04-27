@@ -9,6 +9,8 @@ export function topics(state=initialState, action) {
   switch(action.type) {
     case 'LOAD_TOPICS':
       return {...state, all: action.payload}
+    case 'CLEAR_TOPICS_SEARCH':
+      return {...state, searchResults: []}
     case 'SEARCH_TOPICS':
       return {...state, searchResults: action.payload}
     case 'DELETE_USER_TOPIC':

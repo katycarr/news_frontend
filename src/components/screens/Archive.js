@@ -2,11 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ArticleGroup from '../articles/ArticleGroup'
 import Page from '../Page'
-import withAuth from '../../hocs/withAuth'
+import withAuth from '../hocs/withAuth'
+import { compose } from 'redux'
+import withReadings from '../hocs/withReadings'
 
 
 
-class Archive extends React.Component {
+class ArchiveScreen extends React.Component {
 
   render() {
     let pageContent = <div className='articles-container'><div>No stories saved!</div></div>
@@ -30,4 +32,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(withAuth(Archive))
+export default compose(withAuth,connect(mapStateToProps), withReadings)(ArchiveScreen)
