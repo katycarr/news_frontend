@@ -11,7 +11,7 @@ export function topics(state=initialState, action) {
       return {...state, all: action.payload}
     case 'CLEAR_TOPICS_SEARCH':
       return {...state, searchResults: []}
-    case 'SEARCH_TOPICS':
+    case 'SEARCH_TOPICS_DONE':
       return {...state, searchResults: action.payload}
     case 'DELETE_USER_TOPIC_STARTED':
       return {...state, all: [...state.all.filter(topic => topic.id !== action.payload)]}
