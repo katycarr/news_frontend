@@ -41,6 +41,7 @@ export const loginUser = ({username, password}, history) => {
     fetch(baseUrl+'/login', options)
       .then(res => res.json())
       .then(json => {
+        console.log(json)
         if(json.errors) {
           console.log(json.errors)
         } else {
