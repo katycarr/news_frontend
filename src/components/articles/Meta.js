@@ -2,7 +2,7 @@ import React from 'react'
 import TimeAgo from 'react-timeago'
 import shortString from 'react-timeago/lib/language-strings/en-short'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-import '../../stylesheets/ArticleMeta.css'
+import './Meta.css'
 const formatter = buildFormatter(shortString)
 
 const ArticleMeta = (props) => {

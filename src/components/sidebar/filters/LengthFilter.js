@@ -1,5 +1,5 @@
 import React from 'react'
-import CollapsibleMenu from './CollapsibleMenu'
+import CollapsibleMenu from '../CollapsibleMenu'
 import LengthOption from './LengthOption'
 
 

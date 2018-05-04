@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toggleCheck } from '../../actions/sources'
+import { toggleCheck } from '../../../actions/sources'
 
 class SourceCheckbox extends React.Component {
 

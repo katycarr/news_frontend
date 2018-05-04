@@ -37,9 +37,7 @@ class LabelWithPop extends React.Component {
         </Popover>
       )
     } else {
-      return (
-        <SourceLabel source={this.props.source} handleClick={this.togglePop} />
-      )
+      return <SourceLabel source={this.props.source} handleClick={this.togglePop} />
     }
 
   }

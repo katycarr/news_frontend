@@ -1,7 +1,7 @@
 import React from 'react'
 import LengthFilter from './LengthFilter'
 import FilterContainer from './FilterContainer'
-import '../../stylesheets/FilterGroup.css'
+import './FilterGroup.css'
 
 const FilterGroup = (props) => {
 

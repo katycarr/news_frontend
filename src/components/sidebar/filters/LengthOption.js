@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { filterByLength } from '../../actions/filter'
-import '../../stylesheets/LengthOption.css'
+import { filterByLength } from '../../../actions/filter'
+import './LengthOption.css'
 
 class LengthOption extends React.Component {
 

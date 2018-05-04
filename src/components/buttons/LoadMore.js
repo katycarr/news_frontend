@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchMore } from '../../actions/articles'
-import '../../stylesheets/Buttons.css'
+import './LoadMore.css'
 
 class LoadMore extends React.Component {
 

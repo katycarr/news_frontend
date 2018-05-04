@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
-import '../../stylesheets/Sidebar.css'
+import './Sidebar.css'
 import UserTopicsList from './UserTopicsList'
+import FilterGroup from './filters/FilterGroup'
 
 
 class Sidebar extends React.Component {
@@ -14,6 +15,7 @@ class Sidebar extends React.Component {
         <UserTopicsList topics={this.props.topics}>
           <div className='link'>( <Link to='/topics'>edit</Link> )</div>
         </UserTopicsList>
+        {this.props.withFilters ? <FilterGroup /> : null}
         {this.props.children}
       </div>)
   }

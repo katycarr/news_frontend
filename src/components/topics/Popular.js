@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getPopularTopics} from '../../actions/topics'
 import TopicListItem from '../TopicListItem'
 import AddTopic from '../buttons/AddTopic'
+import './Popular.css'
 
 class PopularTopics extends React.Component {
   componentDidMount = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Logout from './buttons/Logout'
-import '../stylesheets/Nav.css'
+import './Nav.css'
 
 
 

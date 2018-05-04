@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ArticleGroup from './ArticleGroup'
+import ArticleGroup from './Group'
 import LoadMore from '../buttons/LoadMore'
 
-class ArticleList extends React.Component {
+class FilteredArticles extends React.Component {
 
   filterByTime = (articles) => {
     function toNum(string) {
@@ -48,4 +48,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(ArticleList)
+export default connect(mapStateToProps)(FilteredArticles)

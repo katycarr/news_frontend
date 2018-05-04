@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../stylesheets/CollapsibleMenu.css'
+import './CollapsibleMenu.css'
 
 class CollapsibleMenu extends React.Component {
   state = {

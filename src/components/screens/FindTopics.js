@@ -1,39 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import SearchResultsList from '../topics/SearchResultsList'
-import PopularTopics from '../topics/PopularTopics'
 import Page from '../Page'
-import '../../stylesheets/Popular.css'
-import '../../stylesheets/FindTopics.css'
 import withAuth from '../hocs/withAuth'
-import SearchTopics from '../topics/Search'
-import {clearTopicsSearch} from '../../actions/topics'
-import { compose } from 'redux'
+import SearchContainer from '../topics/SearchContainer'
+import PopularTopics from '../topics/Popular'
 
 
-class FindTopicsScreen extends React.Component {
-
-  componentWillUnmount = () => {
-    this.props.clearTopicsSearch()
-  }
-
-  render() {
-    return(
-      <Page>
-        <PopularTopics />
-        <div className='search-topics'>
-          <SearchTopics />
-          <SearchResultsList topics={this.props.searchResults} />
-        </div>
-      </Page>
-    )
-  }
+const FindTopicsScreen = props => {
+  return(
+    <Page>
+      <PopularTopics />
+      <SearchContainer />
+    </Page>
+  )
 }
 
-function mapStateToProps(state) {
-  return {
-    searchResults: state.topics.searchResults
-  }
-}
 
-export default compose(withAuth, connect(mapStateToProps, {clearTopicsSearch}))(FindTopicsScreen)
+
+export default withAuth(FindTopicsScreen)

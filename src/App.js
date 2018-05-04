@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './stylesheets/App.css'
+import './App.css'
 import {Route, withRouter} from 'react-router-dom'
 import ReadingsScreen from './components/screens/Readings'
 import SignupScreen from './components/screens/Signup'

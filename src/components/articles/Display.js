@@ -1,6 +1,7 @@
 import React from 'react'
-import ArticleMeta from './ArticleMeta'
+import ArticleMeta from './Meta'
 import LabelWithPop from '../sources/LabelWithPop'
+import ReadingButton from './ReadingButton'
 
 
 const DisplayArticle = (props) => {
@@ -8,7 +9,7 @@ const DisplayArticle = (props) => {
   return(
     <div >
       <ArticleMeta date={new Date(props.article.published_at)} tone={props.article.emotion} readingtime={props.article.reading_time}>
-        {props.children}
+        <ReadingButton article={props.article} />
       </ArticleMeta>
       {props.article.img_url ?<img src={props.article.img_url} alt={props.article.title} className='article-img'/>
       : null }

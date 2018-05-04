@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import SourceCheckbox from './SourceCheckbox'
-import CollabsibleMenu from './CollapsibleMenu'
+import CollabsibleMenu from '../CollapsibleMenu'
 
 class FilterContainer extends React.Component {
   state = {

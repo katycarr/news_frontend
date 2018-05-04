@@ -2,21 +2,13 @@ import React from 'react'
 
 
 
-class SourceLabel extends React.Component {
+const SourceLabel = props => {
+  return(
+    <div onClick={props.handleClick} className={props.className}>
+      {props.source}
+    </div>
 
-
-
-
-  render() {
-    return(
-      <div onClick={this.props.handleClick} className={this.props.className}>
-        {this.props.source}
-      </div>
-
-    )
-  }
+  )
 }
-
-
 
 export default SourceLabel

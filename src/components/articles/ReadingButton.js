@@ -1,14 +1,11 @@
 import React from 'react'
-import AddToReading from '../buttons/AddToReading'
-import ArticleTags from './ArticleTags'
-import DisplayArticle from './DisplayArticle'
-import ArchiveReading from '../buttons/ArchiveReading'
 import {connect} from 'react-redux'
-import '../../stylesheets/ReadingButton.css'
-import ReactTooltip from 'react-tooltip'
+import AddToReading from '../buttons/AddToReading'
+import ArchiveReading from '../buttons/ArchiveReading'
+import './ReadingButton.css'
 
-class ArticleCard extends React.Component {
 
+class ReadingButton extends React.Component {
   whichButton = () => {
     if (!this.props.reading && !this.props.archive) {
       return <AddToReading article={this.props.article} />
@@ -18,17 +15,10 @@ class ArticleCard extends React.Component {
       return <ArchiveReading reading={this.props.reading} />
     }
   }
-
   render() {
     const readingButton = this.whichButton()
-    return(
-      <div className='article'>
-        <ReactTooltip type='info'/>
-        <DisplayArticle article={this.props.article}>
-          <div className='reading-button'>{readingButton}</div>
-        </DisplayArticle>
-        <ArticleTags article={this.props.article} />
-      </div>
+    return (
+      <div className='reading-button'>{readingButton}</div>
     )
   }
 }
@@ -41,4 +31,4 @@ function mapStateToProps(state, ownProps) {
 
 }
 
-export default connect(mapStateToProps)(ArticleCard)
+export default connect(mapStateToProps)(ReadingButton)
