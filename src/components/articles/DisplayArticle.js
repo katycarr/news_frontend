@@ -1,5 +1,6 @@
 import React from 'react'
 import ArticleMeta from './ArticleMeta'
+import LabelWithPop from '../sources/LabelWithPop'
 
 
 const DisplayArticle = (props) => {
@@ -13,7 +14,8 @@ const DisplayArticle = (props) => {
       : null }
       <div className='article-content'>
         <a href={props.article.url} target="_blank"><h3>{props.article.title}</h3></a>
-        <p>{props.article.author} - {props.article.source}</p>
+        <p>{props.article.author}</p>
+        <LabelWithPop source={props.article.source} />
         <p>{props.article.description}</p>
       </div>
     </div>

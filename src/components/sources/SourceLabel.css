@@ -1,0 +1,31 @@
+div.srcLabel {
+  color:white;
+  background-color: grey;
+  display:inline;
+  padding:5px;
+  border-radius: 2px;
+}
+
+div.srcLabel:hover {
+  cursor:pointer;
+}
+
+div.leftbias {
+  background-color: blue;
+}
+
+div.leftcenterbias {
+  background-color: teal;
+}
+
+div.rightbias {
+  background-color: red;
+}
+
+div.rightcenterbias {
+  background-color: maroon;
+}
+
+div.leastbiased {
+  background-color: purple;
+}

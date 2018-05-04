@@ -1,4 +1,4 @@
-export const baseUrl = 'https://api-frontpage.herokuapp.com'
+export const baseUrl = 'http://localhost:3000'
 
 function actionCreator(type, url, options, payload=null) {
   return () => (dispatch) => {
